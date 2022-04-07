@@ -18,6 +18,8 @@ struct LogInView: View {
             AppSymbol()
             
             Spacer()
+            
+            AppleLogIn()
         }
     }
 }

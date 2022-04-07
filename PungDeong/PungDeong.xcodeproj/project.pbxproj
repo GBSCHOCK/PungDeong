@@ -16,7 +16,7 @@
 		0A6C4CCD27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */; };
 		0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CE127FDB0D60097D751 /* LogInView.swift */; };
 		0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2827FDB43B00284236 /* AppSymbol.swift */; };
-		E283BDBC27FDDBC300F169F2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283BDBB27FDDBC300F169F2 /* SettingView.swift */; };
+		0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,8 @@
 		0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PungDeongUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A6C4CE127FDB0D60097D751 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		0AD8FB2827FDB43B00284236 /* AppSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
-		E283BDBB27FDDBC300F169F2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogIn.swift; sourceTree = "<group>"; };
+		0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PungDeong.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 		0A6C4CAE27FD9DE90097D751 /* PungDeong */ = {
 			isa = PBXGroup;
 			children = (
+				0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */,
 				0A6C4CDE27FD9E7E0097D751 /* LogIn */,
 				0A6C4CDD27FD9E6B0097D751 /* Home */,
 				0A6C4CDC27FD9E5B0097D751 /* Test */,
@@ -142,7 +144,6 @@
 		0A6C4CD927FD9E310097D751 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				E283BDBB27FDDBC300F169F2 /* SettingView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -180,6 +181,7 @@
 			children = (
 				0A6C4CE127FDB0D60097D751 /* LogInView.swift */,
 				0AD8FB2827FDB43B00284236 /* AppSymbol.swift */,
+				0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -315,10 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
-				E283BDBC27FDDBC300F169F2 /* SettingView.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
 				0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */,
+				0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,9 +476,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PungDeong/PungDeong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PungDeong/Preview Content\"";
+				DEVELOPMENT_TEAM = ZNH7978JJQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -502,9 +506,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PungDeong/PungDeong.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PungDeong/Preview Content\"";
+				DEVELOPMENT_TEAM = ZNH7978JJQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
