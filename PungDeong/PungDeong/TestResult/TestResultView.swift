@@ -72,7 +72,14 @@ struct TestResultView: View {
                     }
                 }
                 
-            
+                
+                Text("당신은 사실여부가 확실하지 않을 때는 반드시 전문가에게 찾아가고야 마는 대학원생 물개시군요!. 불확실한 정보 보다는 교수님의 말을 전적으로 믿으시는 당신!")
+                    .lineLimit(3)
+                    .font(.body)
+                    .padding()
+                .multilineTextAlignment(.leading)
+                    
+                
             }
             
     
