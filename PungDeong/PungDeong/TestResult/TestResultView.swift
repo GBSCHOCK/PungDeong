@@ -34,7 +34,7 @@ struct TestResultView: View {
                 .padding()
             
             Text("전문가에게 물어보는 물개")
-                .font(.title)
+                .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundColor(Color("main"))
                 
@@ -48,10 +48,19 @@ struct TestResultView: View {
                 
                
             
+            
             ForEach(resultData) { result in
-                ProgressView("\(result.id)", value: result.score, total: 10)
-                    .padding(.horizontal, 20)
-                    .progressViewStyle(ResultProgressStyle())
+                
+                HStack {
+                    Text("\(result.id)")
+                        .fontWeight(.semibold)
+                        .padding(.leading)
+                    Spacer()
+                    ProgressView(value: result.score, total: 10)
+                        .frame(width: 230,height: 20)
+                        .padding(.horizontal, 20)
+                        .progressViewStyle(ResultProgressStyle())
+                }
             }
             
             Spacer()
