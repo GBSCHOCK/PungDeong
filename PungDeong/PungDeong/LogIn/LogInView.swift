@@ -20,6 +20,8 @@ struct LogInView: View {
             Spacer()
             
             AppleLogIn()
+            GoogleLogIn()
+
         }
     }
 }
