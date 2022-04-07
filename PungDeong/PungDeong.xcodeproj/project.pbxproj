@@ -18,6 +18,7 @@
 		0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2827FDB43B00284236 /* AppSymbol.swift */; };
 		0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */; };
 		0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */; };
+		0AF8FF3F27FEC97400DF6E21 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 0AF8FF3E27FEC97400DF6E21 /* GoogleSignIn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogIn.swift; sourceTree = "<group>"; };
 		0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PungDeong.entitlements; sourceTree = "<group>"; };
 		0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLogIn.swift; sourceTree = "<group>"; };
+		0AF8FF3C27FEC89E00DF6E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF8FF3F27FEC97400DF6E21 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +106,7 @@
 		0A6C4CAE27FD9DE90097D751 /* PungDeong */ = {
 			isa = PBXGroup;
 			children = (
+				0AF8FF3C27FEC89E00DF6E21 /* Info.plist */,
 				0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */,
 				0A6C4CDE27FD9E7E0097D751 /* LogIn */,
 				0A6C4CDD27FD9E6B0097D751 /* Home */,
@@ -205,6 +209,9 @@
 			dependencies = (
 			);
 			name = PungDeong;
+			packageProductDependencies = (
+				0AF8FF3E27FEC97400DF6E21 /* GoogleSignIn */,
+			);
 			productName = PungDeong;
 			productReference = 0A6C4CAC27FD9DE90097D751 /* PungDeong.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +284,9 @@
 				Base,
 			);
 			mainGroup = 0A6C4CA327FD9DE90097D751;
+			packageReferences = (
+				0AF8FF3D27FEC97400DF6E21 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 0A6C4CAD27FD9DE90097D751 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -487,6 +497,7 @@
 				DEVELOPMENT_TEAM = ZNH7978JJQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PungDeong/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -517,6 +528,7 @@
 				DEVELOPMENT_TEAM = ZNH7978JJQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PungDeong/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -647,6 +659,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0AF8FF3D27FEC97400DF6E21 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0AF8FF3E27FEC97400DF6E21 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AF8FF3D27FEC97400DF6E21 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A6C4CA427FD9DE90097D751 /* Project object */;
 }
