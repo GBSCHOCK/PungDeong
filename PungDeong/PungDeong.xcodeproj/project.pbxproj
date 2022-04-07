@@ -17,6 +17,7 @@
 		0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CE127FDB0D60097D751 /* LogInView.swift */; };
 		0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2827FDB43B00284236 /* AppSymbol.swift */; };
 		0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */; };
+		0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0AD8FB2827FDB43B00284236 /* AppSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
 		0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogIn.swift; sourceTree = "<group>"; };
 		0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PungDeong.entitlements; sourceTree = "<group>"; };
+		0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLogIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				0A6C4CE127FDB0D60097D751 /* LogInView.swift */,
 				0AD8FB2827FDB43B00284236 /* AppSymbol.swift */,
 				0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */,
+				0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
+				0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
 				0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */,
 				0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */,
