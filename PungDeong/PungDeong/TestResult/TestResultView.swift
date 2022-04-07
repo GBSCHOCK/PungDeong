@@ -18,10 +18,10 @@ struct TestResultView: View {
     
     @State private var resultData: [ResultData] = [
         ResultData(id: "정보 확인형", score: 3),
-        ResultData(id: "근거 찾는형", score: 5),
+        ResultData(id: "근거 찾는형", score: 8),
         ResultData(id: "전문가 자문형", score: 6),
-        ResultData(id: "바보형", score: 1),
-        ResultData(id: "본문 정독형", score: 2)
+        ResultData(id: "바보형", score: 2),
+        ResultData(id: "본문 정독형", score: 4)
         
         
     ]
@@ -56,10 +56,25 @@ struct TestResultView: View {
                         .fontWeight(.semibold)
                         .padding(.leading)
                     Spacer()
-                    ProgressView(value: result.score, total: 10)
-                        .frame(width: 230,height: 20)
-                        .padding(.horizontal, 20)
+                    
+                    
+                    ZStack {
+                        ProgressView(value: result.score, total: 10)
+                            .frame(width: 230,height: 20)
+                            .padding(.horizontal, 20)
+                            .tint(result.score > 5 ? Color.pink : Color("main"))
                         .progressViewStyle(ResultProgressStyle())
+                        
+                        
+                        //반응형 UI 로 로직 수정 필요
+                        ForEach(1..<6) { i in
+                            Rectangle()
+                                .frame(width: 3, height: 10)
+                                .foregroundColor(.white)
+                                .offset(x: CGFloat(-120 + i * 40))
+                        }
+                        
+                    }
                 }
             }
             
@@ -72,9 +87,10 @@ struct TestResultView: View {
                     HStack {
 
 
-//                        Image(systemName: "square.and.arrow.up")
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fill)
+                        Image(systemName: "square.and.arrow.up")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .foregroundColor(.white)
                             
                             
                     }
@@ -105,7 +121,12 @@ struct TestResultView: View {
             }
         }
     }
+    
+    
+    
 }
+
+
 
 //MARK: - 프로그레스 바 뷰 스타일
 
@@ -113,7 +134,7 @@ struct ResultProgressStyle: ProgressViewStyle {
     func makeBody(configuration: Configuration) -> some View {
         ProgressView(configuration)
             .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 4)
-            .tint(Color("main"))
+            
     }
 }
 
