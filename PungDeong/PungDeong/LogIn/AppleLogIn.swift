@@ -36,7 +36,9 @@ final class SignInWithAppleButton: UIViewRepresentable {
     func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
         return ASAuthorizationAppleIDButton(type: .signIn, style: .whiteOutline)
     }
-    func updateUIView(_ uiView: ASAuthorizationAppleIDButton, context: Context) {}
+    
+    func updateUIView(_ uiView: ASAuthorizationAppleIDButton, context: Context) {
+    }
 }
 
 class SignInWithAppleDelegate: NSObject {
@@ -46,6 +48,7 @@ class SignInWithAppleDelegate: NSObject {
         signInSucceeded = onSignedIn
     }
 }
+
 extension SignInWithAppleDelegate: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
@@ -65,13 +68,13 @@ extension SignInWithAppleDelegate: ASAuthorizationControllerDelegate {
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-    
     }
     
     private func displayLog(credential: ASAuthorizationAppleIDCredential) {
         print("identityToken: \(String(describing: credential.identityToken))\nauthorizationCode: \(credential.authorizationCode!)\nuser: \(credential.user)\nemail: \(String(describing: credential.email))\ncredential: \(credential)")
     }
 }
+
 extension SignInWithAppleDelegate: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return UIApplication.shared.windows.last!
