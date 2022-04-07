@@ -20,18 +20,29 @@ struct Home_main: View {
                            alignment: .center)
                     .padding()
                 
-                NavigationLink(
+                /* NavigationLink(
                     destination: Text("Destination"),
                     label: {
                         ContinueButton()
-                })
+                }) */
                 
                 NavigationLink(
                     destination: Text("Game Page"),
                     label: {
                         CardView(image: "작은물개", category: "첫 번째 게임", heading: "명탐정 물개와 함께", explanation: "마을의 평화를 해치는 범인을 찾아보아요!")
-                })
+                    })
             }
+            .toolbar {
+                NavigationLink(
+                    destination: Text("Profile"),
+                    label: {
+                        ToolbarImage()
+                    })
+            }
+            .navigationBarItems(leading: Image("물개")
+                .resizable()
+                .frame(width: 50, height: 50, alignment: .topLeading))
+            
             // 1번 2번 키워드 : toolbar, toolBarItem, navigationBarLeading, navigationBarTrailing
             
             
@@ -41,7 +52,22 @@ struct Home_main: View {
     }
 }
 
-struct ContinueButton: View {
+struct ToolbarImage: View {
+    var body: some View {
+        Image(systemName: "person.crop.circle")
+            .resizable()
+            .frame(width: 30.0, height: 30.0)
+            .foregroundStyle(
+                .linearGradient(
+                    colors: [.pink, .teal],
+                    startPoint: .top,
+                    endPoint: .bottom
+                ) // 컬러 바꾸기
+            )
+    }
+}
+
+/* struct ContinueButton: View {
     var body: some View {
         Text("Continue")
             .frame(width: 200, height: 50, alignment: .center)
@@ -49,7 +75,7 @@ struct ContinueButton: View {
             .foregroundColor(Color.white)
             .cornerRadius(8)
     }
-}
+} */
 
 
 // 카드 뷰가 두개로 나뉘는게 좋을듯 합니다. (frame에 주석 참고)
