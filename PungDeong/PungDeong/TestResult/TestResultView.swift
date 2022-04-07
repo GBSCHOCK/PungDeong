@@ -26,47 +26,57 @@ struct TestResultView: View {
     
     var body: some View {
         VStack {
-            
-            
-            Text("당신의 결과는...")
-                .font(.title2)
-                .fontWeight(.bold)
-                .padding()
-            
-            Text("전문가에게 물어보는 물개")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(Color("main"))
+            ScrollView {
                 
-            
-            Image("test-image")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 240, height: 240)
-                .overlay(Circle().stroke(.gray, lineWidth: 1))
-                .padding(.vertical)
-                
-            
-            
-            ForEach(resultData) { result in
-                
-                HStack {
-                    Text("\(result.id)")
-                        .fontWeight(.semibold)
-                        .padding(.leading)
-                    Spacer()
+                VStack {
+                    Text("당신의 결과는...")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding()
                     
-                    ZStack {
-                        ProgressView(value: result.score, total: 10)
-                            .frame(width: 230,height: 20)
-                            .padding(.trailing, 30)
-                            .tint(result.score > 5 ? Color.pink : Color("main"))
-                        .progressViewStyle(ResultProgressStyle())
+                    Text("전문가에게 물어보는 물개")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("main"))
                         
+                    
+                    Image("test-image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 240, height: 240)
+                        .overlay(Circle().stroke(.gray, lineWidth: 1))
+                        .padding(.vertical)
+                }
+                
+                
+                ForEach(resultData) { result in
+                    
+                    HStack {
+                        VStack(alignment: .trailing) {
+                            Text("\(result.id)")
+                                .fontWeight(.semibold)
+                                
+                        }
+                        .padding(.leading)
+                        
+                        Spacer()
+                        
+                        ZStack {
+                            ProgressView(value: result.score, total: 10)
+                                .frame(width: 230,height: 20)
+                                .padding(.trailing, 30)
+                                .tint(result.score > 5 ? Color.pink : Color("main"))
+                            .progressViewStyle(ResultProgressStyle())
+                            
+                        }
                     }
                 }
+                
+            
             }
             
+    
+                        
             Spacer()
             
             HStack {
@@ -105,7 +115,9 @@ struct TestResultView: View {
                 }
             }
         }
+        
     }
+    
 }
 
 
