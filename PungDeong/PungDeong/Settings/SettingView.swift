@@ -9,7 +9,23 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                List {
+                    Section(header: Text("헤더").frame(width: .infinity).font(.system(size: 30, weight: .bold)).foregroundColor(Color.black)) {
+                        Text("Test1.....")
+                        Text("Test2.....")
+                        Text("Test3.....")
+                        Text("Test4.....")
+                    }
+                }
+                .frame(width: .infinity, height: 300)
+                .listStyle(.plain)
+            }
+            VStack {
+                Text("D")
+            }
+        }
     }
 }
 
