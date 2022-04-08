@@ -20,12 +20,6 @@ struct Home_main: View {
                            alignment: .center)
                     .padding()
                 
-                /* NavigationLink(
-                    destination: Text("Destination"),
-                    label: {
-                        ContinueButton()
-                }) */
-                
                 NavigationLink(
                     destination: Text("Game Page"),
                     label: {
@@ -39,18 +33,14 @@ struct Home_main: View {
                         ToolbarImage()
                     })
             }
-            .navigationBarItems(leading: Image("물개")
+            .navigationBarItems(leading: Image("103096311")
                 .resizable()
                 .frame(width: 50, height: 50, alignment: .topLeading))
-            
-            // 1번 2번 키워드 : toolbar, toolBarItem, navigationBarLeading, navigationBarTrailing
-            
-            
-            //.navigationTitle("환영해요!")
-            //.navigationBarTitleDisplayMode(.inline)
         }
     }
 }
+
+
 
 struct ToolbarImage: View {
     var body: some View {
@@ -59,23 +49,14 @@ struct ToolbarImage: View {
             .frame(width: 30.0, height: 30.0)
             .foregroundStyle(
                 .linearGradient(
-                    colors: [.pink, .teal],
+                    colors: [Color(.sRGB, red: 254/255, green: 209/255, blue: 239/255), Color(.sRGB, red: 163/255, green: 228/255, blue: 219/255)],
                     startPoint: .top,
                     endPoint: .bottom
-                ) // 컬러 바꾸기
+                )
+//            .foregroundColor(Color(.sRGB, red: 254/255, green: 209/255, blue: 239/255)
             )
     }
 }
-
-/* struct ContinueButton: View {
-    var body: some View {
-        Text("Continue")
-            .frame(width: 200, height: 50, alignment: .center)
-            .background(Color.blue)
-            .foregroundColor(Color.white)
-            .cornerRadius(8)
-    }
-} */
 
 
 // 카드 뷰가 두개로 나뉘는게 좋을듯 합니다. (frame에 주석 참고)
@@ -123,7 +104,7 @@ struct CardView: View {
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
+                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
         )
         .padding([.top, .horizontal])
     }
