@@ -16,8 +16,7 @@ struct AppleLogIn: View {
     
     var body: some View {
         SignInWithAppleButton()
-            .frame(width: screenWidth * 0.8, height: 40)
-            .cornerRadius(5)
+            .frame(width: screenWidth * 0.8, height: 44)
             .onTapGesture(perform: showAppleLogin)
     }
     

@@ -10,15 +10,17 @@ import SwiftUI
 @main
 struct PungDeongApp: App {
     
-    @StateObject var userAuth: UserAuthModel =  UserAuthModel()
+    @StateObject var googleUserAuth: GoogleUserAuthModel =  GoogleUserAuthModel()
     
     var body: some Scene {
         WindowGroup {
-            NavigationView{
-                ContentView()
-            }.environmentObject(userAuth)
-            .navigationViewStyle(.stack)
-                        
+            ContentView()
+                .environmentObject(googleUserAuth)
+            
+//            NavigationView{
+//                ContentView()
+//            }.environmentObject(userAuth)
+//            .navigationViewStyle(.stack)
         }
     }
 }

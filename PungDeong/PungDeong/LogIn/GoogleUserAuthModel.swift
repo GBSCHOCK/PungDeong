@@ -8,7 +8,7 @@
 import Foundation
 import GoogleSignIn
 
-class UserAuthModel: ObservableObject {
+class GoogleUserAuthModel: ObservableObject {
     
     @Published var givenName: String = ""
     @Published var profilePicUrl: String = ""

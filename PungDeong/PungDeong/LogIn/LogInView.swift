@@ -12,16 +12,22 @@ struct LogInView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     var body: some View {
-        VStack{
-            Spacer()
+        ZStack{
+            Color("배경색1")
+                .ignoresSafeArea()
             
-            AppSymbol()
-            
-            Spacer()
-            
-            AppleLogIn()
-            GoogleLogIn()
-
+            VStack{
+                Spacer()
+                
+                AppSymbol()
+                
+                Spacer()
+                
+                VStack{
+                    AppleLogIn()
+                    GoogleLogIn()
+                }.padding()
+            }
         }
     }
 }

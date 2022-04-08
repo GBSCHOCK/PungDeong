@@ -12,7 +12,7 @@ import GoogleSignIn
 // 구글 로그인 디자인 가이드 : https://developers.google.com/identity/branding-guidelines?hl=ko
 struct GoogleLogIn: View {
     
-    @EnvironmentObject var vm: UserAuthModel
+    @EnvironmentObject var vm: GoogleUserAuthModel
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
         
@@ -29,7 +29,7 @@ struct GoogleLogIn: View {
                     
             }
         })
-        .frame(width: screenWidth * 0.8, height: 40)
+        .frame(width: screenWidth * 0.8, height: 44)
         //.padding(EdgeInsets(top: 8, leading: 11, bottom: 8, trailing: 11))
         .background(Color.white)
         .cornerRadius(8.0)
