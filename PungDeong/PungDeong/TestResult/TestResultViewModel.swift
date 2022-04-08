@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import Alamofire
+import KakaoSDKLink
+
+// 기본 템플릿 사용 시 필요
+import KakaoSDKTemplate
 
 class TestResultViewModel {
     
-    
+    func shareKakao() {
+        
+    }
 }

@@ -6,6 +6,25 @@
 //
 
 import SwiftUI
+import UIKit
+
+
+extension View {
+    func snapshot() -> UIImage {
+        let controller = UIHostingController(rootView: self)
+        let view = controller.view
+
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
+    }
+}
 
 
 
@@ -37,74 +56,24 @@ struct ResultData: Identifiable {
 
 
 
+
+
+
 struct TestResultView: View {
-    
-    
-    //데이터 건네져 옴
-    @State private var resultData: [ResultData] = [
-        ResultData(id: 1, score: 3),
-        ResultData(id: 2, score: 8),
-        ResultData(id: 3, score: 6),
-        ResultData(id: 4, score: 2),
-        ResultData(id: 5, score: 4)
-    ]
     
     @State private var type: Int = 0
     
-    
-    
-    var body: some View {
-        VStack {
-            ScrollView {
+    var onlyResultView: some View {
+       
+        
                 
-                VStack {
-                    Text("당신의 결과는...")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding()
-                    
-                    Text("전문가에게 물어보는 물개")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("main"))
-                        
-                    
-                    Image("test-image")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 240, height: 240)
-                        .overlay(Circle().stroke(.gray, lineWidth: 1))
-                        .padding(.vertical)
-                }
+        GeometryReader { geometry in
+            VStack {
+                ResultTopView()
+                    .frame(width: geometry.size.width, height: geometry.size.width)
                 
-                
-                VStack {
-                    ForEach(resultData) { result in
-                        
-                        HStack {
-                            Spacer()
-                            
-                            Text("\(result.description ?? "")")
-                                .fontWeight(.semibold)
-                                .frame(alignment: .trailing)
-                                .padding(.horizontal)
-                            
-                            
-                            
-                            
-                            ZStack {
-                                ProgressView(value: result.score, total: 10)
-                                    .frame(width: 150,height: 20)
-                                    .padding(.trailing, 30)
-                                    .progressViewStyle(ResultProgressStyle())
-                                    .tint(result.score > 5 ? Color.pink : Color("main"))
-                                
-                            }
-                        }
-                    }
-                }
-                .frame(alignment: .center)
-                .offset(x: -40, y: 0)
+                ResultBarView()
+                    .offset(x: -geometry.size.width / 10)
                 
                 HStack {
                     Text("#교수님사랑 #대학원생운명")
@@ -122,47 +91,67 @@ struct TestResultView: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 1)
                 .multilineTextAlignment(.leading)
-                    
-                
             }
+        }
+                
             
+        
+    }
     
-                        
-            Spacer()
-            
-            HStack {
-                Button {
-                    print("DEBUG: Share Button has tapped")
-                } label: {
-                    HStack {
-                        Image(systemName: "square.and.arrow.up")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .foregroundColor(.white)
-                            
-                    }
-                    .padding()
-                    .frame(width: 50, height: 50)
-                    .background(Color("main"))
-                    .cornerRadius(25)
+    var body: some View {
+        GeometryReader { geometry in
+            VStack {
+                ScrollView {
+                    onlyResultView
                 }
-                .padding(.horizontal, 6)
                 
+                            
+                Spacer()
                 
-                Button {
-                    print("DEBUG: Button has tapped")
-                } label: {
-                    HStack {
-                        Text("메인화면으로 가기")
-                            .font(.title3)
-                            .fontWeight(.semibold)
+                HStack {
+                    Button {
+                        print("DEBUG: Share Button has tapped")
+                        
+                        let image = onlyResultView.snapshot()
+                        print(image)
+
+                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                        
+                        let av = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+                        
+                    } label: {
+                        HStack {
+                            Image(systemName: "square.and.arrow.up")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .foregroundColor(.white)
+                                
+                        }
+                        .padding()
+                        .frame(width: 50, height: 50)
+                        .background(Color("main"))
+                        .cornerRadius(25)
                     }
-                    .padding()
-                    .frame(width: 280, height: 50)
-                    .foregroundColor(.white)
-                    .background(Color("main"))
-                    .cornerRadius(10)
-                
+                    .padding(.horizontal, 20)
+                    
+                    
+                    Button {
+                        print("DEBUG: Button has tapped")
+                    } label: {
+                        HStack {
+                            Text("메인화면으로 가기")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity, minHeight: 40, idealHeight: 50)
+                        .foregroundColor(.white)
+                        .background(Color("main"))
+                        .cornerRadius(10)
+                        .padding(.trailing, 20)
+                    
+                    }
                 }
             }
         }
@@ -197,9 +186,7 @@ struct ResultProgressStyle: ProgressViewStyle {
                         .offset(x: CGFloat(-2 + i * Int(width) / 5))
                 }
             }
-            
         }
-        
     }
 }
 
