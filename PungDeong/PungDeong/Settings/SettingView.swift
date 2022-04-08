@@ -77,6 +77,83 @@ struct DetailView: View {
     }
 }
 
+struct NotificationSettingView: View {
+    @State private var someToggle = true
+    var body: some View {
+        VStack {
+            List {
+                Section(header: Text("알림").padding(-6)) {
+                    Toggle("알림 받기", isOn: $someToggle)
+                }
+            }
+            .listStyle(.plain)
+            .padding(0)
+            Spacer()
+            Button(action: {
+                
+            }, label: {
+                Text("저장하기")
+            }).buttonStyle(SettingButtonStyle())
+        }
+    }
+}
+
+struct LinkedAccountSettingView : View {
+    var body: some View {
+        VStack {
+            List {
+                Section(header: Text("게정").padding(-6)) {
+                    Text("?")
+                }
+            }
+            .listStyle(.plain)
+            .padding(0)
+            Spacer()
+        }
+    }
+}
+
+struct DarkModeSettingView: View {
+    @State private var someToggle = true
+    var body: some View {
+        VStack {
+            List {
+                Section(header: Text("다크모드").padding(-6)) {
+                    Toggle("다크모드", isOn: $someToggle)
+                }
+            }
+            .listStyle(.plain)
+            .padding(0)
+            Spacer()
+            Button(action: {
+                
+            }, label: {
+                Text("저장하기")
+            }).buttonStyle(SettingButtonStyle())
+        }
+    }
+}
+
+struct AnnouncementView: View {
+    var body: some View {
+        VStack {
+            List {
+                Section(header: Text("공지사항").padding(-6)) {
+                    ForEach(0..<10) { i in
+                        Text("공지사항\(i)")
+                    }
+                }
+            }
+            .listStyle(.plain)
+            .padding(0)
+            Spacer()
+        }
+    }
+}
+
+
+
+
 struct ListHeader: View {
     var body: some View {
         VStack {
@@ -97,37 +174,5 @@ struct SettingButtonStyle: ButtonStyle {
             .foregroundColor(Color.white)
             .background(Color("LightBlue"))
             .cornerRadius(6.0)
-    }
-}
-
-struct NotificationSettingView: View {
-    var body: some View {
-        VStack {
-            
-        }
-    }
-}
-
-struct LinkedAccountSettingView : View {
-    var body: some View {
-        VStack {
-            
-        }
-    }
-}
-
-struct DarkModeSettingView: View {
-    var body: some View {
-        VStack {
-            
-        }
-    }
-}
-
-struct AnnouncementView: View {
-    var body: some View {
-        VStack {
-            
-        }
     }
 }
