@@ -88,3 +88,12 @@ struct SettingButtonStyle: ButtonStyle {
             .cornerRadius(6.0)
     }
 }
+
+struct NotificationSettingView: View {
+    var body: some View {
+        VStack {
+            
+        }
+    }
+}
+
