@@ -13,16 +13,26 @@ import GoogleSignIn
 struct GoogleLogIn: View {
     
     @EnvironmentObject var vm: UserAuthModel
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    let roboto = UIFont(name: "Roboto-Medium", size: 14)
         
     var body: some View {
         Button(action: vm.signIn, label: {
             HStack(alignment: .center, spacing: 24) {
-                Image("ic_google").frame(width: 18, height: 18)
+                Image("Google")
+                    .resizable()
+                    .frame(width: 18, height: 18)
+                
                 Text("Google 계정으로 로그인")
+                    .font(.custom("Roboto-Medium", fixedSize: 14))
+                    .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.54))
+                    
             }
         })
         .padding(EdgeInsets(top: 8, leading: 11, bottom: 8, trailing: 11))
         .background(Color.white)
+        .frame(width: screenWidth * 0.8, height: screenHeight * 0.05)
         .cornerRadius(8.0)
         .shadow(radius: 4.0)
     }
