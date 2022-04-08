@@ -9,13 +9,15 @@ import SwiftUI
 import AuthenticationServices
 
 struct AppleLogIn: View {
+    
     @State private var appleSignInDelegate: SignInWithAppleDelegate! = nil
     let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
     
     var body: some View {
-        SignInWithAppleButton().frame(width: screenWidth * 0.8, height: 55)
-              .cornerRadius(5)
-              .onTapGesture(perform: showAppleLogin)
+        SignInWithAppleButton()
+            .frame(width: screenWidth * 0.8, height: 44)
+            .onTapGesture(perform: showAppleLogin)
     }
     
     private func showAppleLogin() {
