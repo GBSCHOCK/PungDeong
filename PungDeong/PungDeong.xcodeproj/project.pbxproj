@@ -16,6 +16,8 @@
 		0A6C4CCD27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */; };
 		0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CE127FDB0D60097D751 /* LogInView.swift */; };
 		0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2827FDB43B00284236 /* AppSymbol.swift */; };
+		8E1C69402800082900CD3BE6 /* SwiftUIView-imagescrollview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C693F2800082900CD3BE6 /* SwiftUIView-imagescrollview.swift */; };
+		8EDF79F0280013D800E0F523 /* SwiftUIView-nextbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF79EF280013D800E0F523 /* SwiftUIView-nextbutton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PungDeongUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A6C4CE127FDB0D60097D751 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		0AD8FB2827FDB43B00284236 /* AppSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
+		8E1C693F2800082900CD3BE6 /* SwiftUIView-imagescrollview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUIView-imagescrollview.swift"; sourceTree = "<group>"; };
+		8EDF79EF280013D800E0F523 /* SwiftUIView-nextbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUIView-nextbutton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 		0A6C4CDA27FD9E3A0097D751 /* TestDescription */ = {
 			isa = PBXGroup;
 			children = (
+				8E1C693F2800082900CD3BE6 /* SwiftUIView-imagescrollview.swift */,
+				8EDF79EF280013D800E0F523 /* SwiftUIView-nextbutton.swift */,
 			);
 			path = TestDescription;
 			sourceTree = "<group>";
@@ -314,6 +320,8 @@
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
+				8EDF79F0280013D800E0F523 /* SwiftUIView-nextbutton.swift in Sources */,
+				8E1C69402800082900CD3BE6 /* SwiftUIView-imagescrollview.swift in Sources */,
 				0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
