@@ -17,6 +17,7 @@
 		0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CE127FDB0D60097D751 /* LogInView.swift */; };
 		0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2827FDB43B00284236 /* AppSymbol.swift */; };
 		119511D527FEAF1200759A7B /* Home-main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119511D427FEAF1200759A7B /* Home-main.swift */; };
+		11EA2F122800238000DE96D0 /* cardview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA2F112800238000DE96D0 /* cardview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		0A6C4CE127FDB0D60097D751 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		0AD8FB2827FDB43B00284236 /* AppSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
 		119511D427FEAF1200759A7B /* Home-main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-main.swift"; sourceTree = "<group>"; };
+		11EA2F112800238000DE96D0 /* cardview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				119511D427FEAF1200759A7B /* Home-main.swift */,
+				11EA2F112800238000DE96D0 /* cardview.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
+				11EA2F122800238000DE96D0 /* cardview.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
 				119511D527FEAF1200759A7B /* Home-main.swift in Sources */,
 				0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */,

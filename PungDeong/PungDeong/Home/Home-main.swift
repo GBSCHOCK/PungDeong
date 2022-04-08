@@ -23,7 +23,7 @@ struct Home_main: View {
                 NavigationLink(
                     destination: Text("Game Page"),
                     label: {
-                        CardView(image: "작은물개", category: "첫 번째 게임", heading: "명탐정 물개와 함께", explanation: "마을의 평화를 해치는 범인을 찾아보아요!")
+                        LargeCardView(image: "작은물개", category: "첫 번째 게임", heading: "명탐정 물개와 함께", explanation: "마을의 평화를 해치는 범인을 찾아보아요!")
                     })
             }
             .toolbar {
@@ -46,7 +46,7 @@ struct ToolbarImage: View {
     var body: some View {
         Image(systemName: "person.crop.circle")
             .resizable()
-            .frame(width: 30.0, height: 30.0)
+            .frame(width: 40.0, height: 40.0)
             .foregroundStyle(
                 .linearGradient(
                     colors: [Color(.sRGB, red: 254/255, green: 209/255, blue: 239/255), Color(.sRGB, red: 163/255, green: 228/255, blue: 219/255)],
@@ -62,7 +62,7 @@ struct ToolbarImage: View {
 // 카드 뷰가 두개로 나뉘는게 좋을듯 합니다. (frame에 주석 참고)
 // ex) SmallCardView, LargeCardView
 // Home_main에서 HStack 과 VStack을 활용하여 만들어준 카드를 배치해줍니다. Stack 속에 Stack도 얼마든지 가능합니다.
-struct CardView: View {
+struct LargeCardView: View {
     var image: String
     var category: String
     var heading: String
