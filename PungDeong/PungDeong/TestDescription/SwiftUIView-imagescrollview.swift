@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScrollView: View {
+struct TestDescriptionContent: View {
     
     let images:[Image] = [Image("텍스트설명1"), Image("텍스트설명2"), Image("텍스트설명3")]
     
@@ -24,10 +24,5 @@ struct ScrollView: View {
         .onAppear {
             UIScrollView.appearance().isPagingEnabled = true
         }
-    }
-
-struct ScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollView()
     }
 }

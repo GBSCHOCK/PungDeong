@@ -35,10 +35,10 @@ struct EditButton: View {
             
             ZStack{
                 Rectangle()
-                    .fill(Color.black).opacity(0.6)
+                    .fill(Color(hue: 0.564, saturation: 0.627, brightness: 0.963))
                     .frame(width: 300, height: 70)
                 
-                Text("테스트 시작하기")
+                Text("지금 시작하기")
                     .font(.largeTitle)
                     .bold()
                     .padding()
