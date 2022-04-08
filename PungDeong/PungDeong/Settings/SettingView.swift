@@ -29,6 +29,19 @@ struct SettingView: View {
                         .listStyle(.plain)
                         .padding(0)
                         Spacer()
+                        Button(action: {
+                            
+                        }, label: {
+                            Text("로그아웃")
+                        }).buttonStyle(SettingButtonStyle())
+                        Button(action: {
+                            
+                        }, label: {
+                            Text("회원탈퇴")
+                        })
+                        .buttonStyle(SettingButtonStyle())
+                        .padding(30)
+                        Spacer()
                     }
                     .frame(width: .infinity, height: geometry.size.height/1)
                     Spacer()
@@ -65,3 +78,13 @@ struct ListHeader: View {
     }
 }
 
+struct SettingButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .frame(width: 150, height: 45)
+            .font(.system(size: 14))
+            .foregroundColor(Color.white)
+            .background(Color.blue)
+            .cornerRadius(6.0)
+    }
+}
