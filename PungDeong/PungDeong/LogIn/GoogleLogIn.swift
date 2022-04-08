@@ -15,7 +15,6 @@ struct GoogleLogIn: View {
     @EnvironmentObject var vm: UserAuthModel
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    let roboto = UIFont(name: "Roboto-Medium", size: 14)
         
     var body: some View {
         Button(action: vm.signIn, label: {
@@ -30,9 +29,9 @@ struct GoogleLogIn: View {
                     
             }
         })
-        .padding(EdgeInsets(top: 8, leading: 11, bottom: 8, trailing: 11))
+        .frame(width: screenWidth * 0.8, height: 40)
+        //.padding(EdgeInsets(top: 8, leading: 11, bottom: 8, trailing: 11))
         .background(Color.white)
-        .frame(width: screenWidth * 0.8, height: screenHeight * 0.05)
         .cornerRadius(8.0)
         .shadow(radius: 4.0)
     }

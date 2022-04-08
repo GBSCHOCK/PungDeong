@@ -25,6 +25,7 @@
 		3FF9AF292800149A00060BF5 /* ic_google.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF262800149A00060BF5 /* ic_google.png */; };
 		3FF9AF2B280017E300060BF5 /* g-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF2A280017E300060BF5 /* g-logo.png */; };
 		3FF9AF2E280019F200060BF5 /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF2D280019F200060BF5 /* Roboto */; };
+		3FF9AF302800242E00060BF5 /* 풍덩 앱 심볼.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF2F2800242E00060BF5 /* 풍덩 앱 심볼.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		3FF9AF262800149A00060BF5 /* ic_google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_google.png; sourceTree = "<group>"; };
 		3FF9AF2A280017E300060BF5 /* g-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g-logo.png"; sourceTree = "<group>"; };
 		3FF9AF2D280019F200060BF5 /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
+		3FF9AF2F2800242E00060BF5 /* 풍덩 앱 심볼.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "풍덩 앱 심볼.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 		3FF9AF232800148300060BF5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3FF9AF2F2800242E00060BF5 /* 풍덩 앱 심볼.png */,
 				3FF9AF2A280017E300060BF5 /* g-logo.png */,
 				3FF9AF252800149A00060BF5 /* ic_google 2x.png */,
 				3FF9AF242800149A00060BF5 /* ic_google 3x.png */,
@@ -337,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF9AF302800242E00060BF5 /* 풍덩 앱 심볼.png in Resources */,
 				0A6C4CB727FD9DEA0097D751 /* Preview Assets.xcassets in Resources */,
 				3FF9AF292800149A00060BF5 /* ic_google.png in Resources */,
 				3FF9AF2E280019F200060BF5 /* Roboto in Resources */,
