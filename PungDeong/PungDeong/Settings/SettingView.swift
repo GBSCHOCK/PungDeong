@@ -60,8 +60,19 @@ struct SettingView_Previews: PreviewProvider {
 struct DetailView: View {
     var data: String
     var body: some View {
-        VStack {
-            Text(data)
+        switch data {
+        case "푸시 알림 설정":
+            NotificationSettingView()
+        case "연결 계정 관리":
+            LinkedAccountSettingView()
+        case "다크 모드 설정":
+            DarkModeSettingView()
+        case "공지사항":
+            AnnouncementView()
+        default:
+            VStack {
+                Text(data)
+            }
         }
     }
 }
@@ -97,3 +108,26 @@ struct NotificationSettingView: View {
     }
 }
 
+struct LinkedAccountSettingView : View {
+    var body: some View {
+        VStack {
+            
+        }
+    }
+}
+
+struct DarkModeSettingView: View {
+    var body: some View {
+        VStack {
+            
+        }
+    }
+}
+
+struct AnnouncementView: View {
+    var body: some View {
+        VStack {
+            
+        }
+    }
+}
