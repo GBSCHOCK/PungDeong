@@ -14,16 +14,16 @@ class UserInfo: ObservableObject {
     @Published var content2 : Content2?
 }
 
-struct Test {
-    var complete: Bool
-    var selects: [Int:Int]
+struct Test: Codable {
+    //var complete: Bool
+    var selects: [Int]
     var type: Int
 }
 
-struct Content1 {
-    var complete: Bool
+struct Content1: Codable {
+    //var complete: Bool
 }
 
-struct Content2 {
-    var complete: Bool
+struct Content2: Codable {
+    //var complete: Bool
 }
