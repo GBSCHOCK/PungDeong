@@ -11,6 +11,7 @@
 		0A20627B2801B330002802D6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0A20627A2801B330002802D6 /* FirebaseAuth */; };
 		0A20627D2801B330002802D6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0A20627C2801B330002802D6 /* FirebaseFirestore */; };
 		0A2062802801D754002802D6 /* FirebaseDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20627F2801D754002802D6 /* FirebaseDB.swift */; };
+		0A2062822801DCA5002802D6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2062812801DCA5002802D6 /* UserInfo.swift */; };
 		0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CAF27FD9DE90097D751 /* PungDeongApp.swift */; };
 		0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CB127FD9DE90097D751 /* ContentView.swift */; };
 		0A6C4CB427FD9DEA0097D751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6C4CB327FD9DEA0097D751 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		0A20627F2801D754002802D6 /* FirebaseDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDB.swift; sourceTree = "<group>"; };
+		0A2062812801DCA5002802D6 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0A6C4CAC27FD9DE90097D751 /* PungDeong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PungDeong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6C4CAF27FD9DE90097D751 /* PungDeongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PungDeongApp.swift; sourceTree = "<group>"; };
 		0A6C4CB127FD9DE90097D751 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				0A20627F2801D754002802D6 /* FirebaseDB.swift */,
+				0A2062812801DCA5002802D6 /* UserInfo.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
 				0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */,
+				0A2062822801DCA5002802D6 /* UserInfo.swift in Sources */,
 				0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
