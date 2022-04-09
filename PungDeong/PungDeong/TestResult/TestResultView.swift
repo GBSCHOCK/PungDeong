@@ -28,37 +28,6 @@ extension View {
 
 
 
-struct ResultData: Identifiable {
-    
-    let id: Int
-    let score: Double
-    
-    var description: String? {
-        
-        switch self.id {
-        case 1:
-            return "정보 재확인"
-        case 2:
-            return "근거 조사"
-        case 3:
-            return "전문가 자문"
-        case 4:
-            return "사실 재확인"
-        case 5:
-            return "중립"
-        default:
-            print("DEBUG: 잘못된 타입 값입니다.")
-            return nil
-        }
-    }
-}
-
-
-
-
-
-
-
 struct TestResultView: View {
     
     @State private var type: Int = 0
@@ -76,7 +45,7 @@ struct TestResultView: View {
                     .offset(x: -geometry.size.width / 10)
                 
                 HStack {
-                    Text("#교수님사랑 #대학원생운명")
+                    Text("#교수님사랑 #예비대학원생")
                         .fontWeight(.bold)
                         .padding(.leading, 20)
                 
@@ -138,6 +107,9 @@ struct TestResultView: View {
                     
                     Button {
                         print("DEBUG: Button has tapped")
+                        
+                        
+                        TestResultViewModel.shareKakao()
                     } label: {
                         HStack {
                             Text("메인화면으로 가기")

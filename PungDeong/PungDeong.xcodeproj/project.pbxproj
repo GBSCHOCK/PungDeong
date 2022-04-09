@@ -192,9 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				C02FB40327FEAD610075EB19 /* TestResultView.swift */,
-				C02FB40527FEADBA0075EB19 /* TestResultViewModel.swift */,
 				C008AE6528001CA7000399E1 /* ResultBarView.swift */,
 				C008AE6928001CFC000399E1 /* ResultTopView.swift */,
+				C02FB40527FEADBA0075EB19 /* TestResultViewModel.swift */,
 			);
 			path = TestResult;
 			sourceTree = "<group>";
@@ -502,6 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PungDeong/Preview Content\"";
+				DEVELOPMENT_TEAM = 4DC5UF7YA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PungDeong/Info.plist;
@@ -516,7 +517,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.GBSC.PungDeong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gongtae.PungDeong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -532,6 +533,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PungDeong/Preview Content\"";
+				DEVELOPMENT_TEAM = 4DC5UF7YA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PungDeong/Info.plist;
@@ -546,7 +548,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.GBSC.PungDeong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gongtae.PungDeong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

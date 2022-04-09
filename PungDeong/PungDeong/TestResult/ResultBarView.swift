@@ -8,6 +8,31 @@
 import SwiftUI
 
 
+struct ResultData: Identifiable {
+    
+    let id: Int
+    let score: Double
+    
+    var description: String? {
+        
+        switch self.id {
+        case 1:
+            return "정보 재확인"
+        case 2:
+            return "근거 조사"
+        case 3:
+            return "전문가 자문"
+        case 4:
+            return "사실 재확인"
+        case 5:
+            return "중립"
+        default:
+            print("DEBUG: 잘못된 타입 값입니다.")
+            return nil
+        }
+    }
+}
+
 
 struct ResultBarView: View {
     
