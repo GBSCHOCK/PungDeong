@@ -12,7 +12,6 @@ import Firebase
 struct PungDeongApp: App {
     
     @StateObject var googleUserAuth: GoogleUserAuthModel =  GoogleUserAuthModel()
-    let db = Firestore.firestore()
     
     init() {
         FirebaseApp.configure()

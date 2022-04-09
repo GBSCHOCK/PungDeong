@@ -10,6 +10,7 @@
 		0A2062792801B330002802D6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2062782801B330002802D6 /* FirebaseAnalytics */; };
 		0A20627B2801B330002802D6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0A20627A2801B330002802D6 /* FirebaseAuth */; };
 		0A20627D2801B330002802D6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0A20627C2801B330002802D6 /* FirebaseFirestore */; };
+		0A2062802801D754002802D6 /* FirebaseDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20627F2801D754002802D6 /* FirebaseDB.swift */; };
 		0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CAF27FD9DE90097D751 /* PungDeongApp.swift */; };
 		0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CB127FD9DE90097D751 /* ContentView.swift */; };
 		0A6C4CB427FD9DEA0097D751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6C4CB327FD9DEA0097D751 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A20627F2801D754002802D6 /* FirebaseDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDB.swift; sourceTree = "<group>"; };
 		0A6C4CAC27FD9DE90097D751 /* PungDeong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PungDeong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6C4CAF27FD9DE90097D751 /* PungDeongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PungDeongApp.swift; sourceTree = "<group>"; };
 		0A6C4CB127FD9DE90097D751 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A20627E2801B3C4002802D6 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				0A20627F2801D754002802D6 /* FirebaseDB.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		0A6C4CA327FD9DE90097D751 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 			children = (
 				0AF8FF3C27FEC89E00DF6E21 /* Info.plist */,
 				0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */,
+				0A20627E2801B3C4002802D6 /* Firebase */,
 				0A6C4CDE27FD9E7E0097D751 /* LogIn */,
 				0A6C4CDD27FD9E6B0097D751 /* Home */,
 				0A6C4CDC27FD9E5B0097D751 /* Test */,
@@ -384,6 +395,7 @@
 			files = (
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
 				0AF8FF4127FED42F00DF6E21 /* GoogleUserAuthModel.swift in Sources */,
+				0A2062802801D754002802D6 /* FirebaseDB.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
