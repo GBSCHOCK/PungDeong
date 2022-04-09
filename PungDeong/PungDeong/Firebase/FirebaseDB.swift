@@ -69,4 +69,28 @@ class FirebaseDB {
         
         return returnData
     }
+    
+    func addTest(email: String, test: Test) {
+        do {
+            try db.collection("Test").document(email.description).setData(from: test)
+        } catch let error {
+            print("Error writing: \(error)")
+        }
+    }
+    
+    func addContent1(email: String, content1: Content1) {
+        do {
+            try db.collection("Content1").document(email.description).setData(from: content1)
+        } catch let error {
+            print("Error writing: \(error)")
+        }
+    }
+    
+    func addContent2(email: String, content2: Content2) {
+        do {
+            try db.collection("Content2").document(email.description).setData(from: content2)
+        } catch let error {
+            print("Error writing: \(error)")
+        }
+    }
 }
