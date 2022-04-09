@@ -70,6 +70,18 @@ class FirebaseDB {
         return returnData
     }
     
+    func addEmail(email: String) {
+        db.collection("Email").document(email.description).setData([
+            "email": "\(email)",
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
+    
     func addTest(email: String, test: Test) {
         do {
             try db.collection("Test").document(email.description).setData(from: test)

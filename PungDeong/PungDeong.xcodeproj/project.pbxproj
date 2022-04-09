@@ -18,6 +18,7 @@
 		0A0F86092801F15500C5E153 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0A0F86082801F15500C5E153 /* FirebaseStorage */; };
 		0A0F860B2801F15500C5E153 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 0A0F860A2801F15500C5E153 /* FirebaseStorageCombine-Community */; };
 		0A0F860D2801F15500C5E153 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 0A0F860C2801F15500C5E153 /* FirebaseStorageSwift-Beta */; };
+		0A0F860F2801FFB000C5E153 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A0F860E2801FFB000C5E153 /* GoogleService-Info.plist */; };
 		0A2062802801D754002802D6 /* FirebaseDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20627F2801D754002802D6 /* FirebaseDB.swift */; };
 		0A2062822801DCA5002802D6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2062812801DCA5002802D6 /* UserInfo.swift */; };
 		0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CAF27FD9DE90097D751 /* PungDeongApp.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0F860E2801FFB000C5E153 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A20627F2801D754002802D6 /* FirebaseDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDB.swift; sourceTree = "<group>"; };
 		0A2062812801DCA5002802D6 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0A6C4CAC27FD9DE90097D751 /* PungDeong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PungDeong.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 		0A6C4CAE27FD9DE90097D751 /* PungDeong */ = {
 			isa = PBXGroup;
 			children = (
+				0A0F860E2801FFB000C5E153 /* GoogleService-Info.plist */,
 				0AF8FF3C27FEC89E00DF6E21 /* Info.plist */,
 				0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */,
 				0A20627E2801B3C4002802D6 /* Firebase */,
@@ -390,6 +393,7 @@
 			files = (
 				3FF9AF302800242E00060BF5 /* 풍덩 앱 심볼.png in Resources */,
 				0A6C4CB727FD9DEA0097D751 /* Preview Assets.xcassets in Resources */,
+				0A0F860F2801FFB000C5E153 /* GoogleService-Info.plist in Resources */,
 				3FF9AF292800149A00060BF5 /* ic_google.png in Resources */,
 				3FF9AF2E280019F200060BF5 /* Roboto in Resources */,
 				3FF9AF282800149A00060BF5 /* ic_google 2x.png in Resources */,
