@@ -6,21 +6,22 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct PungDeongApp: App {
     
     @StateObject var googleUserAuth: GoogleUserAuthModel =  GoogleUserAuthModel()
+    let db = Firestore.firestore()
+    
+    init() {
+        FirebaseApp.configure()
+    }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(googleUserAuth)
-            
-//            NavigationView{
-//                ContentView()
-//            }.environmentObject(userAuth)
-//            .navigationViewStyle(.stack)
         }
     }
 }
