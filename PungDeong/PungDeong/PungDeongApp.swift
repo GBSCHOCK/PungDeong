@@ -12,6 +12,7 @@ import Firebase
 struct PungDeongApp: App {
     
     @StateObject var googleUserAuth: GoogleUserAuthModel =  GoogleUserAuthModel()
+    var userInfo = UserInfo()
     
     init() {
         FirebaseApp.configure()
@@ -21,6 +22,7 @@ struct PungDeongApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(googleUserAuth)
+                .environmentObject(userInfo)
         }
     }
 }

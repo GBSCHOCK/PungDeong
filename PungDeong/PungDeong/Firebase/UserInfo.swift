@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-class UserInfo: Identifiable {
-    public var userInfo = UserInfo()
-
-    var email = ""
-    var test : Test?
-    var content1 : Content1?
-    var content2 : Content2?
+class UserInfo: ObservableObject {
+    @Published var email : String?
+    @Published var test : Test?
+    @Published var content1 : Content1?
+    @Published var content2 : Content2?
 }
 
 struct Test {
