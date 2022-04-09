@@ -132,4 +132,4 @@ let test = Test(pages:[
     ]
 )
 
-var answer = Answer(20, typeLen: 3)
+

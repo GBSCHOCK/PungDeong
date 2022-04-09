@@ -29,16 +29,28 @@ struct TestPage {
 }
 
 struct Choice {
+    let id: UUID?
     let text: String
     let type: Int
+    
+    init(text:String, type:Int) {
+        self.id = UUID()
+        self.text = text
+        self.type = type
+    }
 }
 
 struct Answer {
-    static var answeredType: [Int] = []
-    static var selects:[Int:Int] = [:]
+    static var answeredType: [Int] = {
+        return [Int](repeating: 0, count: 20)
+    }()
+    
+//    static var selects: [Int : Int] {
+//        return [
+//    }
     
 //    init(_ pageLen:Int, typeLen:Int) {
-//        self.answeredType = [Int](repeating: 0, count: pageLen)
+
 //        for i in 1...5 {
 //            self.selects.updateValue(i, forKey: 0)
 //        }
