@@ -13,7 +13,8 @@ class FirebaseDB {
     
     private let db = Firestore.firestore()
     
-    func getUserInfo(email: String, userInfo: UserInfo) {
+    func setUserInfo(email: String, userInfo: UserInfo) {
+        print("setUserInfo")
         userInfo.test = fetchTest(email: email)
         userInfo.content1 = fetchContent1(email: email)
         userInfo.content2 = fetchContent2(email: email)
@@ -26,7 +27,6 @@ class FirebaseDB {
         docRef.getDocument(as: Test.self) { result in
             switch result {
             case .success(let test):
-                
                 returnData = test
             case .failure(let error):
                 print("Error decoding: \(error)")

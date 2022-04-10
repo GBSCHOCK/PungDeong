@@ -9,7 +9,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct AppleLogIn: View {
-    
+    @EnvironmentObject var userInfo: UserInfo
     @State private var appleSignInDelegate: SignInWithAppleDelegate! = nil
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -21,16 +21,18 @@ struct AppleLogIn: View {
     }
     
     private func showAppleLogin() {
-        appleSignInDelegate = SignInWithAppleDelegate {
-          print("로그인 성공?: \($0)")
-        }
         let request = ASAuthorizationAppleIDProvider().createRequest()
-        request.requestedScopes = [.fullName, .email]
+        request.requestedScopes = [.email]
      
         let controller = ASAuthorizationController(authorizationRequests: [request])
         controller.delegate = appleSignInDelegate
         controller.presentationContextProvider = appleSignInDelegate
         controller.performRequests()
+        
+        appleSignInDelegate = SignInWithAppleDelegate { email in
+            userInfo.email = email
+            FirebaseDB().setUserInfo(email: email, userInfo: userInfo)
+        }
       }
 }
 
@@ -44,9 +46,9 @@ final class SignInWithAppleButton: UIViewRepresentable {
 }
 
 class SignInWithAppleDelegate: NSObject {
-    private let signInSucceeded: (Bool) -> Void
+    private let signInSucceeded: (String) -> Void
     
-    init (onSignedIn: @escaping (Bool) -> Void) {
+    init (onSignedIn: @escaping (String) -> Void) {
         signInSucceeded = onSignedIn
     }
 }
@@ -55,14 +57,23 @@ extension SignInWithAppleDelegate: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
             case let appleIdCredential as ASAuthorizationAppleIDCredential:
-                if let _ = appleIdCredential.email, let _ = appleIdCredential.fullName {
+                if let _ = appleIdCredential.email {
                     print("111111 ================= 첫 로그인")
-                    displayLog(credential: appleIdCredential)
+                    
+                    guard let email = appleIdCredential.email else {
+                        print("email 없음")
+                        return
+                    }
+                    signInSucceeded(email)
                 } else {
                     print("222222 ================== 로그인 했었음")
-                    displayLog(credential: appleIdCredential)
+                    
+                    guard let email = appleIdCredential.email else {
+                        print("email 없음")
+                        return
+                    }
+                    signInSucceeded(email)
                 }
-                signInSucceeded(true)
             
         default:
             break

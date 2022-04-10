@@ -5,36 +5,18 @@
 //  Created by 김상현 on 2022/04/07.
 //
 
-import Foundation
+import SwiftUI
 import GoogleSignIn
 
 class GoogleUserAuthModel: ObservableObject {
-    
-    @Published var givenName: String = ""
-    @Published var profilePicUrl: String = ""
+    @Published var email: String = ""
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
     
     init(){
         check()
     }
-    
-    func checkStatus(){
-        if(GIDSignIn.sharedInstance.currentUser != nil){
-            let user = GIDSignIn.sharedInstance.currentUser
-            guard let user = user else { return }
-            let givenName = user.profile?.givenName
-            let profilePicUrl = user.profile!.imageURL(withDimension: 100)!.absoluteString
-            self.givenName = givenName ?? ""
-            self.profilePicUrl = profilePicUrl
-            self.isLoggedIn = true
-        }else{
-            self.isLoggedIn = false
-            self.givenName = "Not Logged In"
-            self.profilePicUrl =  ""
-        }
-    }
-    
+
     func check(){
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if let error = error {
@@ -45,7 +27,19 @@ class GoogleUserAuthModel: ObservableObject {
         }
     }
     
-    func signIn(){
+    func checkStatus(){
+        if(GIDSignIn.sharedInstance.currentUser != nil){
+            let user = GIDSignIn.sharedInstance.currentUser
+            guard let user = user else { return }
+            let email = user.profile?.email
+            self.email = email ?? ""
+            self.isLoggedIn = true
+        }else{
+            self.isLoggedIn = false
+        }
+    }
+    
+    func signIn(completion: @escaping (String)->Void) {
         
        guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
 
@@ -60,6 +54,8 @@ class GoogleUserAuthModel: ObservableObject {
                 self.checkStatus()
             }
         )
+        FirebaseDB().addEmail(email: email)
+        completion(email)
     }
     
     func signOut(){
