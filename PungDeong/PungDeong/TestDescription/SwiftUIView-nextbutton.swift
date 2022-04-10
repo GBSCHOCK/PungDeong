@@ -11,6 +11,7 @@ struct StackView: View {
     var body: some View {
         VStack(alignment: .leading){
             Text("환영해요")
+                .multilineTextAlignment(.center)
                 .background(Color.white)
                 .font(.system(size: 50))
                 .foregroundColor(.black)
@@ -35,12 +36,14 @@ struct EditButton: View {
             
             ZStack{
                 Rectangle()
-                    .fill(Color(hue: 0.564, saturation: 0.627, brightness: 0.963))
-                    .frame(width: 300, height: 70)
+                    .fill(Color(red: 0.359, green: 0.731, blue: 0.963))
+                    .frame(width: 300, height: 60)
                 
                 Text("지금 시작하기")
                     .font(.largeTitle)
-                    .bold()
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    //.bold()
                     .padding()
                     .foregroundColor(.white)
             }
@@ -54,4 +57,3 @@ struct StackView_Previews: PreviewProvider {
         StackView()
     }
 }
-
