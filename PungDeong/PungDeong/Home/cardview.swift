@@ -12,15 +12,16 @@ struct CardView: View {
     var category: String
     var heading: String
     var description: String
+    var geometry: GeometryProxy
 
     var body: some View {
         VStack(spacing: 20) {
             Image(image)
                 .resizable()
-                .frame(width: 100, height: 100)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: geometry.size.width / 3)
                 .padding()
-            //frame 을 카드 종류에 맞게 조정해야합니다!
-            //키워드 GeometryReader 사용하면 좋습니다. 하지만 여유가 없으시면 지금처럼 숫자로 값을 조정해주세요.
+            
             HStack{
                 VStack(alignment: .leading) {
                     Text(category)

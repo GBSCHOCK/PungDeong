@@ -10,55 +10,55 @@ import SwiftUI
 
 struct Home_main: View {
     var body: some View {
-        NavigationView {
-            ScrollView {
-            VStack {
-                //HeaderView()
-                
-                Image("물개")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200,
-                           height: 200,
-                           alignment: .center)
+        GeometryReader { geometry in
+            NavigationView {
+                ScrollView {
+                    VStack {
+                        Image("물개")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: geometry.size.width / 2,
+                                   height: geometry.size.height / 4,
+                                   alignment: .center)
+                            .padding()
+                        
+                        HeaderView()
+                        
+                        HStack{
+                            NavigationLink(
+                                destination: Text("Game 1"),
+                                label: {
+                                    CardView(image: "작은물개", category: "1st Challenge", heading: "게임1", description: "first game comes here",
+                                             geometry: geometry)
+                                })
+                            
+                            NavigationLink(
+                                destination: Text("Game 2"),
+                                label: {
+                                    CardView(image: "작은물개", category: "2nd Challenge", heading: "게임2", description: "second game comes here", geometry: geometry)
+                                })
+                        }
+                        
+                        NavigationLink(
+                            destination: Text("Game 3"),
+                            label: {
+                                CardView(image: "물개", category: "3rd Challenge", heading: "게임3", description: "the last game comes here", geometry: geometry)
+                            })
+                        Spacer()
+                        
+                    }
                     .padding()
-                
-                HeaderView()
-                
-                HStack{
-                    NavigationLink(
-                        destination: Text("game 1"),
-                        label: {
-                            CardView(image: "작은물개", category: "Game 1", heading: "blank", description: "first game comes here")
-                        })
-                    
-                    NavigationLink(
-                        destination: Text("game 2"),
-                        label: {
-                            CardView(image: "작은물개", category: "Game 2", heading: "blank", description: "second game comes here")
-                        })
+                    .toolbar {
+                        NavigationLink(
+                            destination: Text("Profile"),
+                            label: {
+                                ToolbarImage()
+                            })
+                    }
+                    .navigationBarItems(leading: Image("심볼")
+                        .resizable()
+                        .frame(width: 50, height: 50, alignment: .topLeading))
                 }
-                
-                NavigationLink(
-                    destination: Text("game 3"),
-                    label: {
-                        CardView(image: "물개", category: "Game 3", heading: "blank", description: "the last game comes here")
-                    })
-                Spacer()
-                
-            }
-            .padding()
-            .toolbar {
-                NavigationLink(
-                    destination: Text("Profile"),
-                    label: {
-                        ToolbarImage()
-                    })
-            }
-            .navigationBarItems(leading: Image("심볼")
-                .resizable()
-                .frame(width: 50, height: 50, alignment: .topLeading))
-        
             }
         }
     }
