@@ -18,7 +18,6 @@ struct Home_main: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: geometry.size.width / 2,
-                                   height: geometry.size.height / 4,
                                    alignment: .center)
                             .padding()
                         
@@ -28,21 +27,21 @@ struct Home_main: View {
                             NavigationLink(
                                 destination: Text("Game 1"),
                                 label: {
-                                    CardView(image: "작은물개", category: "1st Challenge", heading: "게임1", description: "first game comes here",
+                                    CardView(image: "작은물개", category: "1st Challenge", heading: "미니컨텐츠1", description: "first game comes here",
                                              geometry: geometry)
                                 })
                             
                             NavigationLink(
                                 destination: Text("Game 2"),
                                 label: {
-                                    CardView(image: "작은물개", category: "2nd Challenge", heading: "게임2", description: "second game comes here", geometry: geometry)
+                                    CardView(image: "작은물개", category: "2nd Challenge", heading: "미니컨텐츠2", description: "second game comes here", geometry: geometry)
                                 })
                         }
                         
                         NavigationLink(
                             destination: Text("Game 3"),
                             label: {
-                                CardView(image: "물개", category: "3rd Challenge", heading: "게임3", description: "the last game comes here", geometry: geometry)
+                                CardView(image: "물개", category: "3rd Challenge", heading: "미니컨텐츠3", description: "the last game comes here", geometry: geometry)
                             })
                         Spacer()
                         
