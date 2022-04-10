@@ -1,75 +1,52 @@
 //
-//  cardview.swift
+//  CardView.swift
 //  PungDeong
 //
-//  Created by Seulki Lee on 2022/04/08.
+//  Created by Seulki Lee on 2022/04/10.
 //
 
 import SwiftUI
 
-// 카드뷰용 연습장입니다.
-
-struct cardview: View {
-    var body: some View {
-        VStack {
-            HeaderView()
-            
-            HStack{
-                CardView(title: "Game 1", description: "first game comes here")
-                
-                CardView(title: "Game 2", description: "second game comes here")
-            }
-            
-            CardView(title: "Game 3", description: "the last game comes here")
-            
-            Spacer()
-        }
-        .padding()
-    }
-}
-
-struct HeaderView: View {
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 5){
-                Text("Additional Contents")
-                    .font(.system(.largeTitle, design:.rounded))
-                    .fontWeight(.black)
-                Text("we will probably add some mini games here")
-                    .font(.title2)
-            }
-            Spacer()
-        }
-    }
-}
-
 struct CardView: View {
-    var title: String
+    var image: String
+    var category: String
+    var heading: String
     var description: String
 
     var body: some View {
         VStack(spacing: 20) {
-            Image("물개")
+            Image(image)
                 .resizable()
                 .frame(width: 100, height: 100)
-            VStack(spacing: 10) {
-                Text(title)
-                    .font(.system(.title2, design:.rounded))
-                    .fontWeight(.black)
-                Text(description)
-                    .font(.body)
-                    .fontWeight(.bold)
+                .padding()
+            //frame 을 카드 종류에 맞게 조정해야합니다!
+            //키워드 GeometryReader 사용하면 좋습니다. 하지만 여유가 없으시면 지금처럼 숫자로 값을 조정해주세요.
+            HStack{
+                VStack(alignment: .leading) {
+                    Text(category)
+                        .font(.headline)
+                        .foregroundColor(.secondary)
+                    Text(heading)
+                        .font(.title)
+                        .fontWeight(.black)
+                        .foregroundColor(.primary)
+                        .lineLimit(3)
+                    Text(description)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .layoutPriority(100)
+                
+                Spacer()
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, maxHeight: 250)
         .padding(10)
-        .background(Color(.sRGB, red: 255/255, green: 248/255, blue: 243/255))
-        .cornerRadius(20)
-    }
-}
-
-struct cardview_Previews: PreviewProvider {
-    static var previews: some View {
-        cardview()
+//        .background(Color(.sRGB, red: 255/255, green: 248/255, blue: 243/255))
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color(.sRGB, red: 28/255, green: 109/255, blue: 208/255, opacity: 0.2), lineWidth: 1)
+            )
+//        .cornerRadius(20)
     }
 }
