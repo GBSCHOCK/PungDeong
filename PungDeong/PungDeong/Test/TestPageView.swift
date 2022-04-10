@@ -33,26 +33,30 @@ struct TestPageView: View {
     
     
     var body: some View {
+        ZStack {
+            
+            Color.orange.ignoresSafeArea()
         VStack {
             HStack {
                 Spacer()
                 if(pageIndex==0) {
                     Spacer()
                 } else {
-                    NavigationLink("이전",  destination: TestPageView(test: test, pageIndex: pageIndex-1)).navigationBarBackButtonHidden(true)
+                    NavigationLink("이전",  destination: TestPageView(test: test, pageIndex: pageIndex-1)).navigationBarHidden(true)
                 }
                 if(pageIndex == test.pages.count - 1) {
                     Spacer()
                 } else  {
-                    NavigationLink("다음",  destination: TestPageView(test: test, pageIndex: pageIndex+1)).navigationBarBackButtonHidden(true)
+                    NavigationLink("다음",  destination: TestPageView(test: test, pageIndex: pageIndex+1)).navigationBarHidden(true)
                 }
                 Spacer()
-                NavigationLink("\(pageIndex+1)/20",  destination: {}).navigationBarBackButtonHidden(true)
+                NavigationLink("\(pageIndex+1)/20",  destination: {}).navigationBarHidden(true)
                 Spacer()
             }
             ///
             /// 이미지가 들어갈 공간입니다.
-            Spacer()
+            Image("TestImage_01")
+                .resizable()
             ///
             Text(test.pages[pageIndex].text)
             if(pageIndex == test.pages.count-1) {
@@ -91,7 +95,7 @@ struct TestPageView: View {
                         } else {
                             selected(index: 0)
                         }
-                }).navigationBarBackButtonHidden(true)
+                }).navigationBarHidden(true)
                 
                 NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[1].text)}.simultaneousGesture(TapGesture().onEnded{
                         if Answer.answeredType[pageIndex] == 0 {
@@ -99,7 +103,7 @@ struct TestPageView: View {
                         } else {
                             selected(index: 1)
                         }
-                }).navigationBarBackButtonHidden(true)
+                }).navigationBarHidden(true)
                 
                 NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[2].text)}.simultaneousGesture(TapGesture().onEnded{
                         if Answer.answeredType[pageIndex] == 0 {
@@ -107,8 +111,7 @@ struct TestPageView: View {
                         } else {
                             selected(index: 2)
                         }
-                }).navigationBarBackButtonHidden(true)
-                
+                }).navigationBarHidden(true)
             }
             
             
@@ -128,12 +131,12 @@ struct TestPageView: View {
                     .alert(isPresented: $showingAlert) {
                         Alert(title: Text("결과 전송 실패"), message: Text("아직 응답하지 않은 문항이 있습니다."), dismissButton: .default(Text("확인")))
                     }
-                }.navigationBarBackButtonHidden(true)
+                }.navigationBarHidden(true)
 
                 
             }
             
-            
+        }
         }
     }
 }
@@ -141,7 +144,7 @@ struct TestPageView: View {
 struct TestPageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            TestPageView(test: test, pageIndex: 0)
+            TestPageView(test: test, pageIndex: 0).navigationBarHidden(true)
         }
     }
 }
