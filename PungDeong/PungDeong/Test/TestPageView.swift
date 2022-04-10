@@ -31,6 +31,16 @@ struct TestPageView: View {
         print(Answer.answeredType)
     }
     
+    struct answerButtonStyle: ButtonStyle {
+        func makeBody(configuration: Self.Configuration) -> some View {
+            configuration.label
+                .frame(width: 230, height: 45)
+                .font(.system(size: 14))
+                .foregroundColor(Color.blue)
+                .background(Color.white)
+                .cornerRadius(6.0)
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -57,8 +67,10 @@ struct TestPageView: View {
             /// 이미지가 들어갈 공간입니다.
             Image("TestImage_01")
                 .resizable()
+                
             ///
-            Text(test.pages[pageIndex].text)
+            Text(test.pages[pageIndex].text).background()
+            
             if(pageIndex == test.pages.count-1) {
                 Button(action:{
                     if Answer.answeredType[pageIndex] == 0 {
@@ -68,7 +80,7 @@ struct TestPageView: View {
                     }
                 }) {
                     Text(test.pages[pageIndex].choices[0].text)
-                }
+                }.buttonStyle(answerButtonStyle())
                 Button(action:{
                     if Answer.answeredType[pageIndex] == 0 {
                         unselected(index: 1)
@@ -77,7 +89,7 @@ struct TestPageView: View {
                     }
                 }) {
                     Text(test.pages[pageIndex].choices[1].text)
-                }
+                }.buttonStyle(answerButtonStyle())
                 Button(action:{
                     if Answer.answeredType[pageIndex] == 0 {
                         unselected(index: 2)
@@ -86,7 +98,7 @@ struct TestPageView: View {
                     }
                 }) {
                     Text(test.pages[pageIndex].choices[2].text)
-                }
+                }.buttonStyle(answerButtonStyle())
             } else {
                 
                 NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[0].text)}.simultaneousGesture(TapGesture().onEnded{
@@ -95,7 +107,7 @@ struct TestPageView: View {
                         } else {
                             selected(index: 0)
                         }
-                }).navigationBarHidden(true)
+                }).navigationBarHidden(true).buttonStyle(answerButtonStyle())
                 
                 NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[1].text)}.simultaneousGesture(TapGesture().onEnded{
                         if Answer.answeredType[pageIndex] == 0 {
@@ -104,6 +116,7 @@ struct TestPageView: View {
                             selected(index: 1)
                         }
                 }).navigationBarHidden(true)
+                    .buttonStyle(answerButtonStyle())
                 
                 NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[2].text)}.simultaneousGesture(TapGesture().onEnded{
                         if Answer.answeredType[pageIndex] == 0 {
@@ -112,6 +125,7 @@ struct TestPageView: View {
                             selected(index: 2)
                         }
                 }).navigationBarHidden(true)
+                    .buttonStyle(answerButtonStyle())
             }
             
             
@@ -132,6 +146,7 @@ struct TestPageView: View {
                         Alert(title: Text("결과 전송 실패"), message: Text("아직 응답하지 않은 문항이 있습니다."), dismissButton: .default(Text("확인")))
                     }
                 }.navigationBarHidden(true)
+                    .buttonStyle(answerButtonStyle())
 
                 
             }
