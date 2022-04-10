@@ -20,6 +20,7 @@
 		11EA2F162802831C00DE96D0 /* ToolbarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA2F152802831C00DE96D0 /* ToolbarImage.swift */; };
 		11EA2F182802854200DE96D0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA2F172802854200DE96D0 /* CardView.swift */; };
 		11F470002802A36C00FCBBF0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F46FFF2802A36C00FCBBF0 /* HeaderView.swift */; };
+		11F470062802AC2000FCBBF0 /* newscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F470052802AC2000FCBBF0 /* newscreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		11EA2F152802831C00DE96D0 /* ToolbarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarImage.swift; sourceTree = "<group>"; };
 		11EA2F172802854200DE96D0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		11F46FFF2802A36C00FCBBF0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		11F470052802AC2000FCBBF0 /* newscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newscreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				11EA2F152802831C00DE96D0 /* ToolbarImage.swift */,
 				11EA2F172802854200DE96D0 /* CardView.swift */,
 				11F46FFF2802A36C00FCBBF0 /* HeaderView.swift */,
+				11F470052802AC2000FCBBF0 /* newscreen.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
+				11F470062802AC2000FCBBF0 /* newscreen.swift in Sources */,
 				119511D527FEAF1200759A7B /* Home-main.swift in Sources */,
 				11EA2F162802831C00DE96D0 /* ToolbarImage.swift in Sources */,
 				11EA2F182802854200DE96D0 /* CardView.swift in Sources */,

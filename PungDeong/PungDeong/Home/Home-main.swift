@@ -11,6 +11,7 @@ import SwiftUI
 struct Home_main: View {
     var body: some View {
         NavigationView {
+            ScrollView {
             VStack {
                 //HeaderView()
                 
@@ -57,6 +58,8 @@ struct Home_main: View {
             .navigationBarItems(leading: Image("심볼")
                 .resizable()
                 .frame(width: 50, height: 50, alignment: .topLeading))
+        
+            }
         }
     }
 }
