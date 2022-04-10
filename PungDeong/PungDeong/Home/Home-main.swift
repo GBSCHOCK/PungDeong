@@ -56,7 +56,8 @@ struct Home_main: View {
                     }
                     .navigationBarItems(leading: Image("심볼")
                         .resizable()
-                        .frame(width: 50, height: 50, alignment: .topLeading))
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 45, alignment: .topLeading))
                 }
             }
         }

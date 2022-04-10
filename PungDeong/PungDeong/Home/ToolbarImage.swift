@@ -11,7 +11,8 @@ struct ToolbarImage: View {
     var body: some View {
         Image(systemName: "person.crop.circle")
             .resizable()
-            .frame(width: 35.0, height: 35.0)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 35.0)
             .foregroundStyle(
                 .linearGradient(
                     colors: [Color(.sRGB, red: 125/255, green: 237/255, blue: 255/255), Color(.sRGB, red: 150/255, green: 186/255, blue: 255/255)],
