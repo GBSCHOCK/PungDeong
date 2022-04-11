@@ -69,7 +69,7 @@ struct TestDescriptionContent: View {
                     Button {
                         // 실행될 코드
                     } label: {
-                        EditButtonView()
+                        EditButtonView(text: "테스트 시작하기")
                             
                     }
                 .frame(height: 60)

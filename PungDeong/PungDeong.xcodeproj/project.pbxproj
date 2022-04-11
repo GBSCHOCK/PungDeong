@@ -165,7 +165,6 @@
 			children = (
 				8EDF79F12800207100E0F523 /* image */,
 				8E1C693F2800082900CD3BE6 /* SwiftUIView-imagescrollview.swift */,
-				8EDF79EF280013D800E0F523 /* SwiftUIView-nextbutton.swift */,
 				8E6207B42803426A00BC6359 /* SwiftUIView-teststartbutton.swift */,
 			);
 			path = TestDescription;
@@ -208,6 +207,7 @@
 				8E4574C328040C410085C44D /* test1.png */,
 				8E4574C128040C410085C44D /* test2.png */,
 				8E4574C228040C410085C44D /* test3.png */,
+				8EDF79EF280013D800E0F523 /* SwiftUIView-nextbutton.swift */,
 			);
 			path = image;
 			sourceTree = "<group>";

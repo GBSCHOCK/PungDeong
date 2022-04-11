@@ -31,7 +31,7 @@ struct StackView: View {
                 NavigationLink {
                     TestDescriptionContent()
                 } label: {
-                    EditButtonView()
+                    EditButtonView(text: "지금 시작하기")
                 }
                
 
@@ -45,6 +45,12 @@ struct StackView: View {
 
 
 struct EditButtonView: View {
+    
+    
+    var text: String
+    
+    
+    
     var body: some View {
  
         ZStack{
@@ -55,7 +61,7 @@ struct EditButtonView: View {
                 
                 
             
-            Text("테스트 시작하기")
+            Text(text)
                 .font(.title3)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
