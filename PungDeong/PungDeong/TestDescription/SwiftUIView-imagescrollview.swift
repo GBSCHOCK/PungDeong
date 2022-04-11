@@ -26,3 +26,10 @@ struct TestDescriptionContent: View {
         }
     }
 }
+
+
+struct TestDescriptionContent_Previews: PreviewProvider {
+    static var previews: some View {
+        TestDescriptionContent()
+    }
+}

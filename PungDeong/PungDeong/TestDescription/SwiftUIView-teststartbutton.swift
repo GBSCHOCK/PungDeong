@@ -14,6 +14,7 @@ struct SwiftUIView_teststartbutton: View {
         //테스트 시작하기 관련 이미지 자리
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .overlay( RoundedRectangle(cornerRadius: 10) .stroke(Color(.sRGB, red: 28/255, green: 109/255, blue: 208/255, opacity: 0.2), lineWidth: 1))
         
         Button(action: {
                     //버튼을 클릭했을 때 실행되는 코드
@@ -24,13 +25,11 @@ struct SwiftUIView_teststartbutton: View {
                         .font(.system(size:30, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .padding()
-                        .backgroundColor(.pink)
+                        .background(.blue)
                         .clipShape(Capsule())
-                        .overlay(Capsule().stroke(Color.pink, lineWidth: 5)
+                    .overlay(Capsule().stroke(Color.blue, lineWidth: 5))}
                 }
-                    
     }
-}
 }
 
 

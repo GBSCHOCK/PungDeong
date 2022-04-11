@@ -35,9 +35,10 @@ struct EditButton: View {
             Spacer()
             
             ZStack{
-                Rectangle()
+                RoundedRectangle(cornerRadius: 10)
                     .fill(Color(red: 0.359, green: 0.731, blue: 0.963))
                     .frame(width: 300, height: 60)
+                    .cornerRadius(10)
                 
                 Text("지금 시작하기")
                     .font(.largeTitle)
