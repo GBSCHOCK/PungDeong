@@ -13,11 +13,12 @@ struct PungDeongApp: App {
     
     //SwiftUI 지원 안되는 라이브러리 사용을 위해 선언
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+    @StateObject var googleUserAuth: GoogleUserAuthModel =  GoogleUserAuthModel()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(googleUserAuth)
         }
     }
 }
