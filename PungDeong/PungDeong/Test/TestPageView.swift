@@ -190,7 +190,7 @@ struct TestPageView: View {
                     Spacer().frame(width:screenWidth * 0.08,height:screenWidth * 0.08)
                 }
                 Spacer().frame(width:screenWidth, height:screenHeight * 0.02)
-                Text(test.pages[pageIndex].text).frame(minWidth: screenWidth * 0.9, minHeight:  screenWidth * 0.9)
+                Text(test.pages[pageIndex].text).frame(minWidth: screenWidth * 0.9, idealWidth: screenWidth * 0.9 ,maxWidth: screenWidth * 0.9, minHeight: screenWidth * 0.45, idealHeight: screenWidth * 0.45, maxHeight:  screenWidth * 0.9)
                     .border(Color.black, width:1).background()
                 
                 Spacer().frame(width:screenWidth, height:screenHeight * 0.03)
