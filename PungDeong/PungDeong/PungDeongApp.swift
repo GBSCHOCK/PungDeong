@@ -17,7 +17,7 @@ struct PungDeongApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TestResultView()
+            ContentView()
         }
     }
 }
