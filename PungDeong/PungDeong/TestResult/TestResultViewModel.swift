@@ -22,7 +22,7 @@ class TestResultViewModel: NSObject {
     func shareKakao() {
         
         //결과 공유  type 1 ID
-        let templateId = 74829
+        let templateId = 74828
         
         LinkApi.shared.customLink(templateId: Int64(templateId)) { (linkResult, error) in
             if let error = error {

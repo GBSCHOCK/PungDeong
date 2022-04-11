@@ -33,12 +33,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool
     {
-                //패키지 초기화 작업 수행
-        //🚨 Merge 전 APP key 반드시 수정 !! [ ]
+        
         KakaoSDK.initSDK(appKey: "d279a8725a4a2fcccbfcb999e0f80e14")
-//        if let url = URLContexts.first?.url {
-//                    print("url : \(url)")
-//        }
 
         return true
     }
