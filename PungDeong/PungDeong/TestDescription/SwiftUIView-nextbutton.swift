@@ -12,11 +12,13 @@ struct StackView: View {
         NavigationView {
             VStack {
                 HStack {
-                    Text("환영해요")
+                    Text("환영해요!")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
                         .multilineTextAlignment(.center)
                         .background(Color.white)
-                        .font(.system(size: 50))
-                    .foregroundColor(.black)
+                        
                     
                     Spacer()
                 }
@@ -65,7 +67,6 @@ struct EditButtonView: View {
                 .font(.title3)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
-                //.bold()
                 .padding()
                 .foregroundColor(.white)
         }
