@@ -10,6 +10,7 @@ import SwiftUI
 protocol ShareButtonDelegate {
     func kakaoButtonTapped()
     func savePhotoButtonTapped()
+    func sharePhotoButtonTapped()
 }
 
 
@@ -52,7 +53,8 @@ struct FloatingMenuView: View {
             if showMenuItem1 {
                 Button {
                     print("DEBUG: Camera Button Tapped")
-                    
+                    self.showMenu()
+                    self.isShow = false
                     delegate.kakaoButtonTapped()
                 } label: {
                     MenuItem(icon: "camera.fill")
@@ -62,7 +64,10 @@ struct FloatingMenuView: View {
             
             if showMenuItem2 {
                 Button {
+                    
                     print("DEBUG: Photo Button Tapped")
+                    self.showMenu()
+                    self.isShow = false
                     delegate.savePhotoButtonTapped()
                     
                 } label: {
@@ -74,6 +79,9 @@ struct FloatingMenuView: View {
             if showMenuItem3 {
                 Button {
                     print("DEBUG: Share Button Tapped")
+                    self.showMenu()
+                    self.isShow = false
+                    delegate.sharePhotoButtonTapped()
                     
                 } label: {
                     MenuItem(icon: "square.and.arrow.up.fill")

@@ -18,20 +18,7 @@ import KakaoSDKTemplate
 
 class TestResultViewModel: NSObject {
     
-    @objc func photoSaveCompleted() {
-        print("DEBUG: photo saved completely")
-    }
-    
-    
-    func saveImage(image: UIImage) {
-        print("DEBUG: image save to Photo album...")
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
-    
-//    @objc func saveCompleted() {
-////        print("DEBUG: image saved completely")
-//    }
-    
+    //카카오로 결과 공유
     func shareKakao() {
         
         //결과 공유  type 1 ID
@@ -50,4 +37,28 @@ class TestResultViewModel: NSObject {
             }
         }
     }
+    
+    
+    @objc func photoSaveCompleted() {
+        print("DEBUG: photo saved completely")
+    }
+    
+    
+    func saveImage(image: UIImage) {
+        print("DEBUG: image save to Photo album...")
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    
+    func sharePicture(img: UIImage) {
+        print("DEBUG: image sharing...")
+        
+        let av = UIActivityViewController(activityItems: [img], applicationActivities: nil)
+        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+    }
+    
+//    @objc func saveCompleted() {
+////        print("DEBUG: image saved completely")
+//    }
+    
+    
 }
