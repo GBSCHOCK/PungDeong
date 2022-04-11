@@ -16,7 +16,6 @@
 		0A6C4CCD27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */; };
 		0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CE127FDB0D60097D751 /* LogInView.swift */; };
 		0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2827FDB43B00284236 /* AppSymbol.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 		0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PungDeongUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A6C4CE127FDB0D60097D751 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		0AD8FB2827FDB43B00284236 /* AppSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF8FF3F27FEC97400DF6E21 /* GoogleSignIn in Frameworks */,
-				C008AE6D280020DF000399E1 /* KakaoSDKLink in Frameworks */,
-				C008AE6F280020DF000399E1 /* KakaoSDKTemplate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +98,6 @@
 		0A6C4CAE27FD9DE90097D751 /* PungDeong */ = {
 			isa = PBXGroup;
 			children = (
-				0AF8FF3C27FEC89E00DF6E21 /* Info.plist */,
-				0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */,
 				C02FB40027FEAD4A0075EB19 /* TestResult */,
 				0A6C4CDE27FD9E7E0097D751 /* LogIn */,
 				0A6C4CDD27FD9E6B0097D751 /* Home */,
@@ -147,7 +140,6 @@
 		0A6C4CD927FD9E310097D751 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -180,9 +172,6 @@
 				3FF9AF232800148300060BF5 /* Images */,
 				0A6C4CE127FDB0D60097D751 /* LogInView.swift */,
 				0AD8FB2827FDB43B00284236 /* AppSymbol.swift */,
-				0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */,
-				0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */,
-				0AF8FF4027FED42F00DF6E21 /* GoogleUserAuthModel.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -190,11 +179,6 @@
 		3FF9AF232800148300060BF5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3FF9AF2F2800242E00060BF5 /* 풍덩 앱 심볼.png */,
-				3FF9AF2A280017E300060BF5 /* g-logo.png */,
-				3FF9AF252800149A00060BF5 /* ic_google 2x.png */,
-				3FF9AF242800149A00060BF5 /* ic_google 3x.png */,
-				3FF9AF262800149A00060BF5 /* ic_google.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -202,7 +186,6 @@
 		3FF9AF2C280019E800060BF5 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				3FF9AF2D280019F200060BF5 /* Roboto */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -210,11 +193,6 @@
 		C02FB40027FEAD4A0075EB19 /* TestResult */ = {
 			isa = PBXGroup;
 			children = (
-				C02FB40327FEAD610075EB19 /* TestResultView.swift */,
-				C008AE6528001CA7000399E1 /* ResultBarView.swift */,
-				C008AE6928001CFC000399E1 /* ResultTopView.swift */,
-				3F0ED7BD280409DB0032C83B /* TestResultViewModel.swift */,
-				C0DD6A762803D323009E3319 /* FloatingMenuView.swift */,
 			);
 			path = TestResult;
 			sourceTree = "<group>";
@@ -236,9 +214,6 @@
 			);
 			name = PungDeong;
 			packageProductDependencies = (
-				0AF8FF3E27FEC97400DF6E21 /* GoogleSignIn */,
-				C008AE6C280020DF000399E1 /* KakaoSDKLink */,
-				C008AE6E280020DF000399E1 /* KakaoSDKTemplate */,
 			);
 			productName = PungDeong;
 			productReference = 0A6C4CAC27FD9DE90097D751 /* PungDeong.app */;
@@ -313,8 +288,6 @@
 			);
 			mainGroup = 0A6C4CA327FD9DE90097D751;
 			packageReferences = (
-				0AF8FF3D27FEC97400DF6E21 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				C008AE6B280020DF000399E1 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = 0A6C4CAD27FD9DE90097D751 /* Products */;
 			projectDirPath = "";
@@ -332,13 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FF9AF302800242E00060BF5 /* 풍덩 앱 심볼.png in Resources */,
 				0A6C4CB727FD9DEA0097D751 /* Preview Assets.xcassets in Resources */,
-				3FF9AF292800149A00060BF5 /* ic_google.png in Resources */,
-				3FF9AF2E280019F200060BF5 /* Roboto in Resources */,
-				3FF9AF282800149A00060BF5 /* ic_google 2x.png in Resources */,
-				3FF9AF272800149A00060BF5 /* ic_google 3x.png in Resources */,
-				3FF9AF2B280017E300060BF5 /* g-logo.png in Resources */,
 				0A6C4CB427FD9DEA0097D751 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,19 +332,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
-
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
-				0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */,
-				C0DD6A772803D323009E3319 /* FloatingMenuView.swift in Sources */,
-				C008AE6628001CA7000399E1 /* ResultBarView.swift in Sources */,
-				3F0ED7BE280409DB0032C83B /* TestResultViewModel.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
-				C008AE6A28001CFC000399E1 /* ResultTopView.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
-				E2EFCA0F2803F5FD007BEA63 /* ProfileView.swift in Sources */,
 				0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */,
-				C02FB40427FEAD610075EB19 /* TestResultView.swift in Sources */,
-				0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +491,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PungDeong/Info.plist;
@@ -562,7 +519,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PungDeong/Info.plist;
@@ -698,43 +654,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		0AF8FF3D27FEC97400DF6E21 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		C008AE6B280020DF000399E1 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0AF8FF3E27FEC97400DF6E21 /* GoogleSignIn */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0AF8FF3D27FEC97400DF6E21 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignIn;
-		};
-		C008AE6C280020DF000399E1 /* KakaoSDKLink */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C008AE6B280020DF000399E1 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKLink;
-		};
-		C008AE6E280020DF000399E1 /* KakaoSDKTemplate */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C008AE6B280020DF000399E1 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKTemplate;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A6C4CA427FD9DE90097D751 /* Project object */;
 }
