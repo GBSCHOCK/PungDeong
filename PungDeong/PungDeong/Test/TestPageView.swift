@@ -11,20 +11,35 @@ import SwiftUI
 
 struct TestPageView: View {
     
+    
+    //MARK: - Propeties
+    
     let test: Test
-    var pageIndex: Int
+    @State var pageIndex: Int = 0
+    @State var currentItem: TestPage
+    
+    init(test: Test) {
+        self.test = test
+        self.currentItem = test.pages[0]
+    }
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
     @State private var showingAlert = false
-    @State private var showingResultButton = false
+    @State private var isLastPage = false
     
     func selectingType(index: Int) {
         let selectedType = test.pages[pageIndex].choices[index].type
         
         Answer.answeredType[pageIndex] = selectedType
         print(Answer.answeredType)
+        
+        //페이징 넘기기
+        if(pageIndex != test.pages.count - 1){
+            pageIndex = pageIndex + 1
+            self.currentItem = test.pages[pageIndex]
+        }
     }
     
     /*
@@ -145,11 +160,12 @@ struct TestPageView: View {
                             Image(systemName: "arrow.left")
                         }.navigationBarHidden(true).buttonStyle(disabledNavButtonStyle()).disabled(true)
                     } else {
-                        NavigationLink {
-                            TestPageView(test: test, pageIndex: pageIndex-1)
-                        } label: {
+                        Button(action:{
+                            self.pageIndex = pageIndex - 1
+                            self.currentItem = test.pages[pageIndex]
+                        }) {
                             Image(systemName: "arrow.left")
-                        }.navigationBarHidden(true).buttonStyle(navigationButtonStyle())
+                        }.buttonStyle(navigationButtonStyle())
                     }
                     
                     // 마지막 페이지인 경우 다음 버튼이 사라짐
@@ -159,11 +175,12 @@ struct TestPageView: View {
                             Image(systemName: "arrow.right")
                         }.navigationBarHidden(true).buttonStyle(disabledNavButtonStyle()).disabled(true)
                     } else {
-                        NavigationLink {
-                            TestPageView(test: test, pageIndex: pageIndex+1)
-                        } label: {
+                        Button(action:{
+                            self.pageIndex = pageIndex + 1
+                            self.currentItem = test.pages[pageIndex]
+                        }) {
                             Image(systemName: "arrow.right")
-                        }.navigationBarHidden(true).buttonStyle(navigationButtonStyle())
+                        }.buttonStyle(navigationButtonStyle())
                     }
                     
                     Spacer()
@@ -180,15 +197,15 @@ struct TestPageView: View {
                 if(pageIndex == test.pages.count-1) {
                     if(test.pages[pageIndex].choices[0].type==Answer.answeredType[pageIndex]) {
                         Button(action:{
+                            self.isLastPage.toggle()
                             selectingType(index: 0)
-                            showingResultButton = true
                         }) {
                             Text(test.pages[pageIndex].choices[0].text)
                         }.buttonStyle(chosenButtonStyle())
                     } else {
                         Button(action:{
+                            self.isLastPage.toggle()
                             selectingType(index: 0)
-                            showingResultButton = true
                         }) {
                             Text(test.pages[pageIndex].choices[0].text)
                         }.buttonStyle(testButtonStyle())
@@ -196,15 +213,15 @@ struct TestPageView: View {
                     
                     if(test.pages[pageIndex].choices[1].type==Answer.answeredType[pageIndex]) {
                         Button(action:{
+                            self.isLastPage.toggle()
                             selectingType(index: 1)
-                            showingResultButton = true
                         }) {
                             Text(test.pages[pageIndex].choices[1].text)
                         }.buttonStyle(chosenButtonStyle())
                     } else {
                         Button(action:{
+                            self.isLastPage.toggle()
                             selectingType(index: 1)
-                            showingResultButton = true
                         }) {
                             Text(test.pages[pageIndex].choices[1].text)
                         }.buttonStyle(testButtonStyle())
@@ -212,68 +229,73 @@ struct TestPageView: View {
                     
                     if(test.pages[pageIndex].choices[2].type==Answer.answeredType[pageIndex]) {
                         Button(action:{
+                            self.isLastPage.toggle()
                             selectingType(index: 2)
-                            showingResultButton = true
                         }) {
                             Text(test.pages[pageIndex].choices[2].text)
                         }.buttonStyle(chosenButtonStyle())
                     } else {
                         Button(action:{
+                            self.isLastPage.toggle()
                             selectingType(index: 2)
-                            showingResultButton = true
                         }) {
                             Text(test.pages[pageIndex].choices[2].text)
                         }.buttonStyle(testButtonStyle())
                     }
                 } else {
                     if(test.pages[pageIndex].choices[0].type==Answer.answeredType[pageIndex]) {
-                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[0].text)}.simultaneousGesture(TapGesture().onEnded{
+                        Button(action:{
                             selectingType(index: 0)
-                        }).navigationBarHidden(true)
-                            .buttonStyle(chosenButtonStyle())
+                        }) {
+                            Text(test.pages[pageIndex].choices[0].text)
+                        }.buttonStyle(chosenButtonStyle())
+
                     } else {
-                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[0].text)}.simultaneousGesture(TapGesture().onEnded{
+                        Button(action:{
                             selectingType(index: 0)
-                        }).navigationBarHidden(true)
-                            .buttonStyle(testButtonStyle())
+                        }) {
+                            Text(test.pages[pageIndex].choices[0].text)
+                        }.buttonStyle(testButtonStyle())
                     }
                     
                     if(test.pages[pageIndex].choices[1].type==Answer.answeredType[pageIndex]) {
-                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[1].text)}.simultaneousGesture(TapGesture().onEnded{
+                        Button(action:{
                             selectingType(index: 1)
-                        }).navigationBarHidden(true)
-                            .buttonStyle(chosenButtonStyle())
+                        }) {
+                            Text(test.pages[pageIndex].choices[1].text)
+                        }.buttonStyle(chosenButtonStyle())
                     } else {
-                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[1].text)}.simultaneousGesture(TapGesture().onEnded{
+                        Button(action:{
                             selectingType(index: 1)
-                        }).navigationBarHidden(true)
-                            .buttonStyle(testButtonStyle())
+                        }) {
+                            Text(test.pages[pageIndex].choices[1].text)
+                        }.buttonStyle(testButtonStyle())
                     }
                     
                     if(test.pages[pageIndex].choices[2].type==Answer.answeredType[pageIndex]) {
-                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[2].text)}.simultaneousGesture(TapGesture().onEnded{
+                        Button(action:{
                             selectingType(index: 2)
-                        }).navigationBarHidden(true)
-                            .buttonStyle(chosenButtonStyle())
+                        }) {
+                            Text(test.pages[pageIndex].choices[2].text)
+                        }.buttonStyle(chosenButtonStyle())
+                        
                     } else {
-                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[2].text)}.simultaneousGesture(TapGesture().onEnded{
+                        Button(action:{
                             selectingType(index: 2)
-                        }).navigationBarHidden(true)
-                            .buttonStyle(testButtonStyle())
+                        }) {
+                            Text(test.pages[pageIndex].choices[2].text)
+                        }.buttonStyle(testButtonStyle())
                     }
                 }
                 Spacer()
                 
-                if (pageIndex == test.pages.count - 1 &&
-                    showingResultButton) {
+                if (isLastPage) {
                     
                     Button(action:{
-                        var index = 1
                         for answer in Answer.answeredType {
                             if answer == 0 {
                                 showingAlert = true
                             }
-                            index += 1
                         }
                         print("Result: \(Answer.answeredType)")
                     }) {
@@ -291,7 +313,7 @@ struct TestPageView: View {
 struct TestPageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            TestPageView(test: test, pageIndex: 0).navigationBarHidden(true)
+            TestPageView(test: test)
         }
         .previewInterfaceOrientation(.portrait)
     }

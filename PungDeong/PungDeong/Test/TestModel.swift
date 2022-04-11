@@ -44,15 +44,4 @@ struct Answer {
     static var answeredType: [Int] = {
         return [Int](repeating: 0, count: 20)
     }()
-    
-//    static var selects: [Int : Int] {
-//        return [
-//    }
-    
-//    init(_ pageLen:Int, typeLen:Int) {
-
-//        for i in 1...5 {
-//            self.selects.updateValue(i, forKey: 0)
-//        }
-//    }
 }
