@@ -20,15 +20,7 @@ struct TestPageView: View {
     @State private var showingAlert = false
     @State private var showingResultButton = false
     
-    
-    func unselected(index: Int) {
-        let selectedType = test.pages[pageIndex].choices[index].type
-        
-        Answer.answeredType[pageIndex] = selectedType
-        print(Answer.answeredType)
-    }
-    
-    func selected(index: Int) {
+    func selectingType(index: Int) {
         let selectedType = test.pages[pageIndex].choices[index].type
         
         Answer.answeredType[pageIndex] = selectedType
@@ -45,11 +37,14 @@ struct TestPageView: View {
         
         func makeBody(configuration: Self.Configuration) -> some View {
             configuration.label
-                .frame(width: screenWidth * 0.08, height: 30)
-                .font(.system(size: 16))
+                .frame(width: screenWidth * 0.1, height: screenWidth * 0.1)
+                .font(.body)
                 .foregroundColor(Color.black)
                 .background(Color.white)
-                .cornerRadius(6.0)
+                .cornerRadius(100.0).overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.black, lineWidth: 1)
+                )
         }
     }
     
@@ -63,11 +58,14 @@ struct TestPageView: View {
         
         func makeBody(configuration: Self.Configuration) -> some View {
             configuration.label
-                .frame(width: screenWidth * 0.08, height: 30)
-                .font(.system(size: 16))
+                .frame(width: screenWidth * 0.1, height: screenWidth * 0.1)
+                .font(.body)
                 .foregroundColor(Color.black)
                 .background(Color.white)
-                .cornerRadius(6.0).opacity(0)
+                .cornerRadius(100.0).overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.black, lineWidth: 1)
+                ).opacity(0)
         }
     }
     
@@ -78,11 +76,14 @@ struct TestPageView: View {
         
         func makeBody(configuration: Self.Configuration) -> some View {
             configuration.label
-                .frame(width: screenWidth * 0.16, height: 30)
-                .font(.system(size: 16))
+                .frame(width: screenWidth * 0.2, height: screenWidth * 0.1)
+                .font(.body)
                 .foregroundColor(Color.black)
                 .background(Color.white)
-                .cornerRadius(6.0)
+                .cornerRadius(100.0).overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.black, lineWidth: 1)
+                )
         }
     }
     
@@ -96,6 +97,20 @@ struct TestPageView: View {
                 .frame(width: screenWidth * 0.9, height: 45)
                 .foregroundColor(Color.white)
                 .background(Color("TestButton"))
+                .cornerRadius(6.0)
+        }
+    }
+    
+    struct chosenButtonStyle: ButtonStyle {
+        
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+        
+        func makeBody(configuration: Self.Configuration) -> some View {
+            configuration.label
+                .frame(width: screenWidth * 0.9, height: 45)
+                .foregroundColor(Color("TestButton"))
+                .background(Color("ChosenButton"))
                 .cornerRadius(6.0)
         }
     }
@@ -140,9 +155,9 @@ struct TestPageView: View {
                     // 마지막 페이지인 경우 다음 버튼이 사라짐
                     if pageIndex == test.pages.count - 1 {
                         
-                            NavigationLink {} label: {
-                                Image(systemName: "arrow.right")
-                            }.navigationBarHidden(true).buttonStyle(disabledNavButtonStyle()).disabled(true)
+                        NavigationLink {} label: {
+                            Image(systemName: "arrow.right")
+                        }.navigationBarHidden(true).buttonStyle(disabledNavButtonStyle()).disabled(true)
                     } else {
                         NavigationLink {
                             TestPageView(test: test, pageIndex: pageIndex+1)
@@ -156,68 +171,96 @@ struct TestPageView: View {
                     
                     Spacer().frame(width:screenWidth * 0.08,height:screenWidth * 0.08)
                 }
-                
+                Spacer().frame(width:screenWidth, height:screenHeight * 0.02)
                 Text(test.pages[pageIndex].text).frame(minWidth: screenWidth * 0.9, minHeight:  screenWidth * 0.9)
                     .border(Color.black, width:1).background()
+                
+                Spacer().frame(width:screenWidth, height:screenHeight * 0.05)
+                
                 if(pageIndex == test.pages.count-1) {
-                    Button(action:{
-                        if Answer.answeredType[pageIndex] == 0 {
-                            unselected(index: 0)
-                        } else {
-                            selected(index: 0)
-                        }
-                        showingResultButton = true
-                    }) {
-                        Text(test.pages[pageIndex].choices[0].text)
-                    }.buttonStyle(testButtonStyle())
+                    if(test.pages[pageIndex].choices[0].type==Answer.answeredType[pageIndex]) {
+                        Button(action:{
+                            selectingType(index: 0)
+                            showingResultButton = true
+                        }) {
+                            Text(test.pages[pageIndex].choices[0].text)
+                        }.buttonStyle(chosenButtonStyle())
+                    } else {
+                        Button(action:{
+                            selectingType(index: 0)
+                            showingResultButton = true
+                        }) {
+                            Text(test.pages[pageIndex].choices[0].text)
+                        }.buttonStyle(testButtonStyle())
+                    }
                     
-                    Button(action:{
-                        if Answer.answeredType[pageIndex] == 0 {
-                            unselected(index: 1)
-                        } else {
-                            selected(index: 1)
-                        }
-                        showingResultButton = true
-                    }) {
-                        Text(test.pages[pageIndex].choices[1].text)
-                    }.buttonStyle(testButtonStyle())
+                    if(test.pages[pageIndex].choices[1].type==Answer.answeredType[pageIndex]) {
+                        Button(action:{
+                            selectingType(index: 1)
+                            showingResultButton = true
+                        }) {
+                            Text(test.pages[pageIndex].choices[1].text)
+                        }.buttonStyle(chosenButtonStyle())
+                    } else {
+                        Button(action:{
+                            selectingType(index: 1)
+                            showingResultButton = true
+                        }) {
+                            Text(test.pages[pageIndex].choices[1].text)
+                        }.buttonStyle(testButtonStyle())
+                    }
                     
-                    Button(action:{
-                        if Answer.answeredType[pageIndex] == 0 {
-                            unselected(index: 2)
-                        } else {
-                            selected(index: 2)
-                        }
-                        showingResultButton = true
-                    }) {
-                        Text(test.pages[pageIndex].choices[2].text)
-                    }.buttonStyle(testButtonStyle())
+                    if(test.pages[pageIndex].choices[2].type==Answer.answeredType[pageIndex]) {
+                        Button(action:{
+                            selectingType(index: 2)
+                            showingResultButton = true
+                        }) {
+                            Text(test.pages[pageIndex].choices[2].text)
+                        }.buttonStyle(chosenButtonStyle())
+                    } else {
+                        Button(action:{
+                            selectingType(index: 2)
+                            showingResultButton = true
+                        }) {
+                            Text(test.pages[pageIndex].choices[2].text)
+                        }.buttonStyle(testButtonStyle())
+                    }
                 } else {
+                    if(test.pages[pageIndex].choices[0].type==Answer.answeredType[pageIndex]) {
+                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[0].text)}.simultaneousGesture(TapGesture().onEnded{
+                            selectingType(index: 0)
+                        }).navigationBarHidden(true)
+                            .buttonStyle(chosenButtonStyle())
+                    } else {
+                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[0].text)}.simultaneousGesture(TapGesture().onEnded{
+                            selectingType(index: 0)
+                        }).navigationBarHidden(true)
+                            .buttonStyle(testButtonStyle())
+                    }
                     
-                    NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[0].text)}.simultaneousGesture(TapGesture().onEnded{
-                        if Answer.answeredType[pageIndex] == 0 {
-                            unselected(index: 0)
-                        } else {
-                            selected(index: 0)
-                        }
-                    }).navigationBarHidden(true)
-                        .buttonStyle(testButtonStyle())
+                    if(test.pages[pageIndex].choices[1].type==Answer.answeredType[pageIndex]) {
+                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[1].text)}.simultaneousGesture(TapGesture().onEnded{
+                            selectingType(index: 1)
+                        }).navigationBarHidden(true)
+                            .buttonStyle(chosenButtonStyle())
+                    } else {
+                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[1].text)}.simultaneousGesture(TapGesture().onEnded{
+                            selectingType(index: 1)
+                        }).navigationBarHidden(true)
+                            .buttonStyle(testButtonStyle())
+                    }
                     
-                    NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[1].text)}.simultaneousGesture(TapGesture().onEnded{
-                        if Answer.answeredType[pageIndex] == 0 {
-                            unselected(index: 1)
-                        } else {
-                            selected(index: 1)
-                        }
-                    }).navigationBarHidden(true).buttonStyle(testButtonStyle())
-                    
-                    NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[2].text)}.simultaneousGesture(TapGesture().onEnded{
-                        if Answer.answeredType[pageIndex] == 0 {
-                            unselected(index: 2)
-                        } else {
-                            selected(index: 2)
-                        }
-                    }).navigationBarHidden(true).buttonStyle(testButtonStyle())
+                    if(test.pages[pageIndex].choices[2].type==Answer.answeredType[pageIndex]) {
+                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[2].text)}.simultaneousGesture(TapGesture().onEnded{
+                            selectingType(index: 2)
+                        }).navigationBarHidden(true)
+                            .buttonStyle(chosenButtonStyle())
+                    } else {
+                        NavigationLink(destination: TestPageView(test: test, pageIndex: pageIndex+1)) {Text(test.pages[pageIndex].choices[2].text)}.simultaneousGesture(TapGesture().onEnded{
+                            selectingType(index: 2)
+                        }).navigationBarHidden(true)
+                            .buttonStyle(testButtonStyle())
+                    }
                 }
                 Spacer()
                 
