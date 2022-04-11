@@ -27,7 +27,8 @@ struct TestPageView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     @State private var showingAlert = false
-    @State private var isLastPage = false
+    @State private var isLastPageToggle = false
+    @State private var isLastPageToggleSave = false
     
     func selectingType(index: Int) {
         let selectedType = test.pages[pageIndex].choices[index].type
@@ -192,19 +193,21 @@ struct TestPageView: View {
                 Text(test.pages[pageIndex].text).frame(minWidth: screenWidth * 0.9, minHeight:  screenWidth * 0.9)
                     .border(Color.black, width:1).background()
                 
-                Spacer().frame(width:screenWidth, height:screenHeight * 0.05)
+                Spacer().frame(width:screenWidth, height:screenHeight * 0.03)
                 
                 if(pageIndex == test.pages.count-1) {
                     if(test.pages[pageIndex].choices[0].type==Answer.answeredType[pageIndex]) {
                         Button(action:{
-                            self.isLastPage.toggle()
+                            self.isLastPageToggle.toggle()
+                            self.isLastPageToggleSave = true
                             selectingType(index: 0)
                         }) {
                             Text(test.pages[pageIndex].choices[0].text)
                         }.buttonStyle(chosenButtonStyle())
                     } else {
                         Button(action:{
-                            self.isLastPage.toggle()
+                            self.isLastPageToggle.toggle()
+                            self.isLastPageToggleSave = true
                             selectingType(index: 0)
                         }) {
                             Text(test.pages[pageIndex].choices[0].text)
@@ -213,14 +216,16 @@ struct TestPageView: View {
                     
                     if(test.pages[pageIndex].choices[1].type==Answer.answeredType[pageIndex]) {
                         Button(action:{
-                            self.isLastPage.toggle()
+                            self.isLastPageToggle.toggle()
+                            self.isLastPageToggleSave = true
                             selectingType(index: 1)
                         }) {
                             Text(test.pages[pageIndex].choices[1].text)
                         }.buttonStyle(chosenButtonStyle())
                     } else {
                         Button(action:{
-                            self.isLastPage.toggle()
+                            self.isLastPageToggle.toggle()
+                            self.isLastPageToggleSave = true
                             selectingType(index: 1)
                         }) {
                             Text(test.pages[pageIndex].choices[1].text)
@@ -229,14 +234,16 @@ struct TestPageView: View {
                     
                     if(test.pages[pageIndex].choices[2].type==Answer.answeredType[pageIndex]) {
                         Button(action:{
-                            self.isLastPage.toggle()
+                            self.isLastPageToggle.toggle()
+                            self.isLastPageToggleSave = true
                             selectingType(index: 2)
                         }) {
                             Text(test.pages[pageIndex].choices[2].text)
                         }.buttonStyle(chosenButtonStyle())
                     } else {
                         Button(action:{
-                            self.isLastPage.toggle()
+                            self.isLastPageToggle.toggle()
+                            self.isLastPageToggleSave = true
                             selectingType(index: 2)
                         }) {
                             Text(test.pages[pageIndex].choices[2].text)
@@ -289,7 +296,7 @@ struct TestPageView: View {
                 }
                 Spacer()
                 
-                if (isLastPage) {
+                if (pageIndex == test.pages.count - 1 && ( self.isLastPageToggle  || self.isLastPageToggleSave )) {
                     
                     Button(action:{
                         for answer in Answer.answeredType {
@@ -304,6 +311,7 @@ struct TestPageView: View {
                         .alert(isPresented: $showingAlert) {
                             Alert(title: Text("결과 전송 실패"), message: Text("아직 응답하지 않은 문항이 있습니다."), dismissButton: .default(Text("확인")))
                         }
+                    Spacer().frame(width:.infinity, height: screenHeight * 0.01)
                 }
             }
         }
