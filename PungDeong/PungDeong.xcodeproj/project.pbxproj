@@ -20,6 +20,7 @@
 		0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */; };
 		0AF8FF3F27FEC97400DF6E21 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 0AF8FF3E27FEC97400DF6E21 /* GoogleSignIn */; };
 		0AF8FF4127FED42F00DF6E21 /* GoogleUserAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8FF4027FED42F00DF6E21 /* GoogleUserAuthModel.swift */; };
+		3F0ED7BE280409DB0032C83B /* TestResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0ED7BD280409DB0032C83B /* TestResultViewModel.swift */; };
 		3FF9AF272800149A00060BF5 /* ic_google 3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF242800149A00060BF5 /* ic_google 3x.png */; };
 		3FF9AF282800149A00060BF5 /* ic_google 2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF252800149A00060BF5 /* ic_google 2x.png */; };
 		3FF9AF292800149A00060BF5 /* ic_google.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF262800149A00060BF5 /* ic_google.png */; };
@@ -69,6 +70,7 @@
 		0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLogIn.swift; sourceTree = "<group>"; };
 		0AF8FF3C27FEC89E00DF6E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0AF8FF4027FED42F00DF6E21 /* GoogleUserAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleUserAuthModel.swift; sourceTree = "<group>"; };
+		3F0ED7BD280409DB0032C83B /* TestResultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultViewModel.swift; sourceTree = "<group>"; };
 		3FF9AF242800149A00060BF5 /* ic_google 3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_google 3x.png"; sourceTree = "<group>"; };
 		3FF9AF252800149A00060BF5 /* ic_google 2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_google 2x.png"; sourceTree = "<group>"; };
 		3FF9AF262800149A00060BF5 /* ic_google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_google.png; sourceTree = "<group>"; };
@@ -78,7 +80,6 @@
 		C008AE6528001CA7000399E1 /* ResultBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBarView.swift; sourceTree = "<group>"; };
 		C008AE6928001CFC000399E1 /* ResultTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTopView.swift; sourceTree = "<group>"; };
 		C02FB40327FEAD610075EB19 /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
-		C02FB40527FEADBA0075EB19 /* TestResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultViewModel.swift; sourceTree = "<group>"; };
 		C0DD6A762803D323009E3319 /* FloatingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,7 +243,7 @@
 				C02FB40327FEAD610075EB19 /* TestResultView.swift */,
 				C008AE6528001CA7000399E1 /* ResultBarView.swift */,
 				C008AE6928001CFC000399E1 /* ResultTopView.swift */,
-				C02FB40527FEADBA0075EB19 /* TestResultViewModel.swift */,
+				3F0ED7BD280409DB0032C83B /* TestResultViewModel.swift */,
 				C0DD6A762803D323009E3319 /* FloatingMenuView.swift */,
 			);
 			path = TestResult;
@@ -399,6 +400,7 @@
 				0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */,
 				C0DD6A772803D323009E3319 /* FloatingMenuView.swift in Sources */,
 				C008AE6628001CA7000399E1 /* ResultBarView.swift in Sources */,
+				3F0ED7BE280409DB0032C83B /* TestResultViewModel.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				C008AE6A28001CFC000399E1 /* ResultTopView.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
