@@ -126,7 +126,9 @@ struct DarkModeSettingView: View {
             .padding(0)
             Spacer()
             Button(action: {
-                
+                if #available(iOS 13.0, *) {
+                    self.window?.overrideUserInterfaceStyle = .light
+                }
             }, label: {
                 Text("저장하기")
             }).buttonStyle(SettingButtonStyle())
