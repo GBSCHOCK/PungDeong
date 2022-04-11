@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TestView: View {
     
-    @State var settingView = false
-    
     var body: some View {
         NavigationView {
             TestPageView(test: test, pageIndex:0).navigationBarHidden(true)

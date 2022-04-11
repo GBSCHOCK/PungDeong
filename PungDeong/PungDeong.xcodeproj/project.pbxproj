@@ -20,7 +20,7 @@
 		FE2D6F8827FEAF2D00BE206D /* TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D6F8727FEAF2D00BE206D /* TestSet.swift */; };
 		FE2D6F8A27FEAF9200BE206D /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D6F8927FEAF9200BE206D /* TestModel.swift */; };
 		FE2D6F8C27FEAFEF00BE206D /* TestPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D6F8B27FEAFEF00BE206D /* TestPageView.swift */; };
-		FE4390912802963E000D341A /* TestImage_01.png in Resources */ = {isa = PBXBuildFile; fileRef = FE4390902802963E000D341A /* TestImage_01.png */; };
+		FE4390932803D7BF000D341A /* image in Resources */ = {isa = PBXBuildFile; fileRef = FE4390922803D7BF000D341A /* image */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		FE2D6F8727FEAF2D00BE206D /* TestSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSet.swift; sourceTree = "<group>"; };
 		FE2D6F8927FEAF9200BE206D /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		FE2D6F8B27FEAFEF00BE206D /* TestPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPageView.swift; sourceTree = "<group>"; };
-		FE4390902802963E000D341A /* TestImage_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage_01.png; sourceTree = "<group>"; };
+		FE4390922803D7BF000D341A /* image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = image; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,6 @@
 				0A6C4CDE27FD9E7E0097D751 /* LogIn */,
 				0A6C4CDD27FD9E6B0097D751 /* Home */,
 				0A6C4CDC27FD9E5B0097D751 /* Test */,
-				0A6C4CDB27FD9E490097D751 /* TestResult */,
 				0A6C4CDA27FD9E3A0097D751 /* TestDescription */,
 				0A6C4CD927FD9E310097D751 /* Settings */,
 				0A6C4CAF27FD9DE90097D751 /* PungDeongApp.swift */,
@@ -161,21 +160,14 @@
 			path = TestDescription;
 			sourceTree = "<group>";
 		};
-		0A6C4CDB27FD9E490097D751 /* TestResult */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TestResult;
-			sourceTree = "<group>";
-		};
 		0A6C4CDC27FD9E5B0097D751 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				FE4390922803D7BF000D341A /* image */,
 				FE28A24327FEAE6400317194 /* TestView.swift */,
 				FE2D6F8727FEAF2D00BE206D /* TestSet.swift */,
 				FE2D6F8927FEAF9200BE206D /* TestModel.swift */,
 				FE2D6F8B27FEAFEF00BE206D /* TestPageView.swift */,
-				FE4390902802963E000D341A /* TestImage_01.png */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -300,7 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE4390912802963E000D341A /* TestImage_01.png in Resources */,
+				FE4390932803D7BF000D341A /* image in Resources */,
 				0A6C4CB727FD9DEA0097D751 /* Preview Assets.xcassets in Resources */,
 				0A6C4CB427FD9DEA0097D751 /* Assets.xcassets in Resources */,
 			);
@@ -490,9 +482,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PungDeong/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -507,6 +500,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.GBSC.PungDeong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -518,9 +512,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PungDeong/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -535,6 +530,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.GBSC.PungDeong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
