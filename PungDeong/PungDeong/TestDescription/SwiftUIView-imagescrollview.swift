@@ -12,7 +12,7 @@ struct TestDescriptionContent: View {
     
     @State private var scrollViewContentOffset = CGFloat(0)
     
-    let images:[Image] = [Image("test1"), Image("test2"), Image("test3")]
+    let images:[Image] = [Image("1"), Image("2"), Image("3"), Image("4"), Image("5"), Image("6"), Image("7"), Image("8"), Image("9"), Image("10"), Image("11"), Image("12")]
     
     @State var isShown: Bool = false
     
@@ -41,15 +41,15 @@ struct TestDescriptionContent: View {
                             print("scrollViewContentOffset", scrollViewContentOffset)
                             // Do something
                         
-                        
-                        if scrollViewContentOffset > 700 {
+                        // 마지막 슬라이드 떄 버튼 등장
+                        if scrollViewContentOffset > proxy.size.width * CGFloat((images.count - 1)) - 100 {
                             withAnimation {
                                 self.isShown = true
                             }
                             
                         }
                 })
-           }
+            }
                 
                 
                 
