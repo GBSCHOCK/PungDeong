@@ -16,11 +16,6 @@ struct PungDeongApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(googleUserAuth)
-            
-//            NavigationView{
-//                ContentView()
-//            }.environmentObject(userAuth)
-//            .navigationViewStyle(.stack)
         }
     }
 }
