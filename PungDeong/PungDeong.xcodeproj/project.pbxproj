@@ -16,23 +16,7 @@
 		0A6C4CCD27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */; };
 		0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CE127FDB0D60097D751 /* LogInView.swift */; };
 		0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2827FDB43B00284236 /* AppSymbol.swift */; };
-		0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */; };
-		0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */; };
-		0AF8FF3F27FEC97400DF6E21 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 0AF8FF3E27FEC97400DF6E21 /* GoogleSignIn */; };
-		0AF8FF4127FED42F00DF6E21 /* GoogleUserAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8FF4027FED42F00DF6E21 /* GoogleUserAuthModel.swift */; };
-		3F0ED7BE280409DB0032C83B /* TestResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0ED7BD280409DB0032C83B /* TestResultViewModel.swift */; };
-		3FF9AF272800149A00060BF5 /* ic_google 3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF242800149A00060BF5 /* ic_google 3x.png */; };
-		3FF9AF282800149A00060BF5 /* ic_google 2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF252800149A00060BF5 /* ic_google 2x.png */; };
-		3FF9AF292800149A00060BF5 /* ic_google.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF262800149A00060BF5 /* ic_google.png */; };
-		3FF9AF2B280017E300060BF5 /* g-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF2A280017E300060BF5 /* g-logo.png */; };
-		3FF9AF2E280019F200060BF5 /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF2D280019F200060BF5 /* Roboto */; };
-		3FF9AF302800242E00060BF5 /* 풍덩 앱 심볼.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF9AF2F2800242E00060BF5 /* 풍덩 앱 심볼.png */; };
-		C008AE6628001CA7000399E1 /* ResultBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C008AE6528001CA7000399E1 /* ResultBarView.swift */; };
-		C008AE6A28001CFC000399E1 /* ResultTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C008AE6928001CFC000399E1 /* ResultTopView.swift */; };
-		C008AE6D280020DF000399E1 /* KakaoSDKLink in Frameworks */ = {isa = PBXBuildFile; productRef = C008AE6C280020DF000399E1 /* KakaoSDKLink */; };
-		C008AE6F280020DF000399E1 /* KakaoSDKTemplate in Frameworks */ = {isa = PBXBuildFile; productRef = C008AE6E280020DF000399E1 /* KakaoSDKTemplate */; };
-		C02FB40427FEAD610075EB19 /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FB40327FEAD610075EB19 /* TestResultView.swift */; };
-		C0DD6A772803D323009E3319 /* FloatingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DD6A762803D323009E3319 /* FloatingMenuView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,22 +49,7 @@
 		0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PungDeongUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A6C4CE127FDB0D60097D751 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		0AD8FB2827FDB43B00284236 /* AppSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
-		0AD8FB2A27FDBA5500284236 /* AppleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogIn.swift; sourceTree = "<group>"; };
-		0AD8FB2C27FDD2BB00284236 /* PungDeong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PungDeong.entitlements; sourceTree = "<group>"; };
-		0AF8FF3A27FEC41300DF6E21 /* GoogleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLogIn.swift; sourceTree = "<group>"; };
-		0AF8FF3C27FEC89E00DF6E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0AF8FF4027FED42F00DF6E21 /* GoogleUserAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleUserAuthModel.swift; sourceTree = "<group>"; };
-		3F0ED7BD280409DB0032C83B /* TestResultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultViewModel.swift; sourceTree = "<group>"; };
-		3FF9AF242800149A00060BF5 /* ic_google 3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_google 3x.png"; sourceTree = "<group>"; };
-		3FF9AF252800149A00060BF5 /* ic_google 2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_google 2x.png"; sourceTree = "<group>"; };
-		3FF9AF262800149A00060BF5 /* ic_google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_google.png; sourceTree = "<group>"; };
-		3FF9AF2A280017E300060BF5 /* g-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g-logo.png"; sourceTree = "<group>"; };
-		3FF9AF2D280019F200060BF5 /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
-		3FF9AF2F2800242E00060BF5 /* 풍덩 앱 심볼.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "풍덩 앱 심볼.png"; sourceTree = "<group>"; };
-		C008AE6528001CA7000399E1 /* ResultBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBarView.swift; sourceTree = "<group>"; };
-		C008AE6928001CFC000399E1 /* ResultTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTopView.swift; sourceTree = "<group>"; };
-		C02FB40327FEAD610075EB19 /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
-		C0DD6A762803D323009E3319 /* FloatingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenuView.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +147,7 @@
 		0A6C4CD927FD9E310097D751 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -395,7 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
-				0AF8FF4127FED42F00DF6E21 /* GoogleUserAuthModel.swift in Sources */,
+
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				0AF8FF3B27FEC41300DF6E21 /* GoogleLogIn.swift in Sources */,
 				C0DD6A772803D323009E3319 /* FloatingMenuView.swift in Sources */,
@@ -404,6 +374,7 @@
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				C008AE6A28001CFC000399E1 /* ResultTopView.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
+				E2EFCA0F2803F5FD007BEA63 /* ProfileView.swift in Sources */,
 				0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */,
 				C02FB40427FEAD610075EB19 /* TestResultView.swift in Sources */,
 				0AD8FB2B27FDBA5500284236 /* AppleLogIn.swift in Sources */,
@@ -562,11 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PungDeong/PungDeong.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PungDeong/Preview Content\"";
-				DEVELOPMENT_TEAM = ZNH7978JJQ;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PungDeong/Info.plist;
@@ -583,6 +550,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.GBSC.PungDeong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "GBSCHOCK-pungdeong";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -594,11 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PungDeong/PungDeong.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PungDeong/Preview Content\"";
-				DEVELOPMENT_TEAM = ZNH7978JJQ;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PungDeong/Info.plist;
@@ -615,6 +579,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.GBSC.PungDeong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "GBSCHOCK-pungdeong";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
