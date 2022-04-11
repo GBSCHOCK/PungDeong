@@ -30,12 +30,11 @@ extension View {
 
 struct TestResultView: View {
     
+    private var viewModel =  TestResultViewModel()
+    
     @State private var type: Int = 0
     
     var onlyResultView: some View {
-       
-        
-                
         GeometryReader { geometry in
             VStack {
                 ResultTopView()
@@ -69,67 +68,69 @@ struct TestResultView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                ScrollView {
-                    onlyResultView
-                }
-                
-                            
-                Spacer()
-                
-                HStack {
-                    Button {
-                        print("DEBUG: Share Button has tapped")
-                        
-                        let image = onlyResultView.snapshot()
-                        print(image)
-
-                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-                        
-                        let av = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-                        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
-                        
-                    } label: {
-                        HStack {
-                            Image(systemName: "square.and.arrow.up")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .foregroundColor(.white)
+            ZStack {
+                VStack {
+                    ScrollView {
+                        onlyResultView
+                    }
+                    
                                 
-                        }
-                        .padding()
-                        .frame(width: 50, height: 50)
-                        .background(Color("main"))
-                        .cornerRadius(25)
-                    }
-                    .padding(.horizontal, 20)
+                    Spacer()
                     
-                    
-                    Button {
-                        print("DEBUG: Button has tapped")
+                    HStack {
                         
+                        Button {
+                            print("DEBUG: Button has tapped")
+                            
+                            // 메인화면 이동 메서드 호출
+                            
+                        } label: {
+                            HStack {
+                                Text("메인화면으로 가기")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                            }
+                            .padding()
+                            .frame(width: 260, height: 50)
+                            .foregroundColor(.white)
+                            .background(Color("main"))
+                            .cornerRadius(10)
+                            
                         
-                        TestResultViewModel.shareKakao()
-                    } label: {
-                        HStack {
-                            Text("메인화면으로 가기")
-                                .font(.title3)
-                                .fontWeight(.semibold)
                         }
-                        .padding()
-                        .frame(maxWidth: .infinity, minHeight: 40, idealHeight: 50)
-                        .foregroundColor(.white)
-                        .background(Color("main"))
-                        .cornerRadius(10)
-                        .padding(.trailing, 20)
-                    
+                        .padding(20)
+                        
+                        Spacer()
                     }
                 }
+                
+                ShareMenu(delegate: self)
             }
         }
     }
+    
+    
 }
 
+
+
+
+extension TestResultView: ShareButtonDelegate {
+    func kakaoButtonTapped() {
+        print("DEBUG: kakao delegate method")
+        viewModel.shareKakao()
+    }
+    
+    func savePhotoButtonTapped() {
+        print("DEBUG: save photo delegate method")
+        let image = onlyResultView.snapshot()
+        
+        viewModel.saveImage(image: image)
+    }
+    
+    
+
+}
 
 
 //MARK: - 프로그레스 바 뷰 스타일

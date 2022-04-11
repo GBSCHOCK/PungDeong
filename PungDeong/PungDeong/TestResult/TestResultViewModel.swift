@@ -16,9 +16,23 @@ import KakaoSDKTemplate
 
 
 
-class TestResultViewModel {
+class TestResultViewModel: NSObject {
     
-    static func shareKakao() {
+    @objc func photoSaveCompleted() {
+        print("DEBUG: photo saved completely")
+    }
+    
+    
+    func saveImage(image: UIImage) {
+        print("DEBUG: image save to Photo album...")
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    
+//    @objc func saveCompleted() {
+////        print("DEBUG: image saved completely")
+//    }
+    
+    func shareKakao() {
         
         //결과 공유  type 1 ID
         let templateId = 74829

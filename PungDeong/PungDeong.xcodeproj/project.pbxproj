@@ -22,6 +22,7 @@
 		C008AE6F280020DF000399E1 /* KakaoSDKTemplate in Frameworks */ = {isa = PBXBuildFile; productRef = C008AE6E280020DF000399E1 /* KakaoSDKTemplate */; };
 		C02FB40427FEAD610075EB19 /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FB40327FEAD610075EB19 /* TestResultView.swift */; };
 		C02FB40627FEADBA0075EB19 /* TestResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FB40527FEADBA0075EB19 /* TestResultViewModel.swift */; };
+		C0DD6A772803D323009E3319 /* FloatingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DD6A762803D323009E3319 /* FloatingMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		C008AE6928001CFC000399E1 /* ResultTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTopView.swift; sourceTree = "<group>"; };
 		C02FB40327FEAD610075EB19 /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
 		C02FB40527FEADBA0075EB19 /* TestResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultViewModel.swift; sourceTree = "<group>"; };
+		C0DD6A762803D323009E3319 /* FloatingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				C008AE6528001CA7000399E1 /* ResultBarView.swift */,
 				C008AE6928001CFC000399E1 /* ResultTopView.swift */,
 				C02FB40527FEADBA0075EB19 /* TestResultViewModel.swift */,
+				C0DD6A762803D323009E3319 /* FloatingMenuView.swift */,
 			);
 			path = TestResult;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
+				C0DD6A772803D323009E3319 /* FloatingMenuView.swift in Sources */,
 				C008AE6628001CA7000399E1 /* ResultBarView.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				C008AE6A28001CFC000399E1 /* ResultTopView.swift in Sources */,
