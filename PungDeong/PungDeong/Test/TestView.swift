@@ -9,6 +9,10 @@ import SwiftUI
 
 struct TestView: View {
     
+    init(){
+        UINavigationBar.setAnimationsEnabled(false)
+    }
+    
     var body: some View {
         NavigationView {
             TestPageView(test: test, pageIndex:0).navigationBarHidden(true)
