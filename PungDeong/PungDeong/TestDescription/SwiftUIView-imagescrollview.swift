@@ -6,27 +6,83 @@
 //
 
 import SwiftUI
+import SwiftUITrackableScrollView
 
 struct TestDescriptionContent: View {
     
-    let images:[Image] = [Image("텍스트설명1"), Image("텍스트설명2"), Image("텍스트설명3")]
+    @State private var scrollViewContentOffset = CGFloat(0)
+    
+    let images:[Image] = [Image("test1"), Image("test2"), Image("test3")]
+    
+    @State var isShown: Bool = false
     
     var body: some View {
         
-            ScrollView(.horizontal) {
-                HStack(spacing: 0) {
-                    ForEach(images.indices) { index in
-                        images[index]
+        ZStack {
+ 
+            VStack {
+                GeometryReader { proxy in
+                    TrackableScrollView(.horizontal, showIndicators: false, contentOffset: $scrollViewContentOffset) {
+                        HStack(spacing: 0) {
+                            ForEach(images.indices) { index in
+                                images[index]
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: proxy.size.width, height: proxy.size.height)
+                                        
+           
+                            }
+                        }
                     }
-                    .frame(width: 300, height: 200)
-                }
+                    .onAppear {
+                        UIScrollView.appearance().isPagingEnabled = true
+                    }
+                    .onChange(of: scrollViewContentOffset, perform: { value in
+                            print("scrollViewContentOffset", scrollViewContentOffset)
+                            // Do something
+                        
+                        
+                        if scrollViewContentOffset > 700 {
+                            withAnimation {
+                                self.isShown = true
+                            }
+                            
+                        }
+                })
+           }
+                
+                
+                
+                
+                
             }
-        .onAppear {
-            UIScrollView.appearance().isPagingEnabled = true
+
+            
+            
+            
+            
+            if isShown {
+                VStack {
+                    
+                    Spacer()
+                    
+                    Button {
+                        // 실행될 코드
+                    } label: {
+                        EditButtonView()
+                            
+                    }
+                .frame(height: 60)
+                }
+            } else {
+                // 버튼 없어용
+                
+            }
         }
     }
 }
-
+            
+            
 
 struct TestDescriptionContent_Previews: PreviewProvider {
     static var previews: some View {

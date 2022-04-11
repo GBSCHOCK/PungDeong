@@ -9,46 +9,62 @@ import SwiftUI
 
 struct StackView: View {
     var body: some View {
-        VStack(alignment: .leading){
-            Text("환영해요")
-                .multilineTextAlignment(.center)
-                .background(Color.white)
-                .font(.system(size: 50))
-                .foregroundColor(.black)
-            Image("캐릭터")
-                //테스트 관련 설명 이미지 자리
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            EditButton()
-        
-        
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("환영해요")
+                        .multilineTextAlignment(.center)
+                        .background(Color.white)
+                        .font(.system(size: 50))
+                    .foregroundColor(.black)
+                    
+                    Spacer()
+                }
+                .padding(.leading, 30)
+                
+                Image("seal")
+                    //테스트 관련 설명 이미지 자리
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        
+                
+                NavigationLink {
+                    TestDescriptionContent()
+                } label: {
+                    EditButtonView()
+                }
+               
+
+                
+            
+            
+            }
         }
-      
-        
     }
 }
 
 
-struct EditButton: View {
+struct EditButtonView: View {
     var body: some View {
-        VStack{
-            Spacer()
-            
-            ZStack{
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(red: 0.359, green: 0.731, blue: 0.963))
-                    .frame(width: 300, height: 60)
-                    .cornerRadius(10)
+ 
+        ZStack{
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color(red: 0.359, green: 0.731, blue: 0.963))
+                .frame(height: 50)
+                .padding(20)
                 
-                Text("지금 시작하기")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    //.bold()
-                    .padding()
-                    .foregroundColor(.white)
-            }
+                
+            
+            Text("테스트 시작하기")
+                .font(.title3)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.center)
+                //.bold()
+                .padding()
+                .foregroundColor(.white)
         }
+        
+        
     }
 }
 

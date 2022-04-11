@@ -11,7 +11,7 @@ import SwiftUI
 struct PungDeongApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StackView()
         }
     }
 }
