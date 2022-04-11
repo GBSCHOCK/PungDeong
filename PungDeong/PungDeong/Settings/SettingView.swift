@@ -125,13 +125,13 @@ struct DarkModeSettingView: View {
             .listStyle(.plain)
             .padding(0)
             Spacer()
-            Button(action: {
-                if #available(iOS 13.0, *) {
-                    self.window?.overrideUserInterfaceStyle = .light
-                }
-            }, label: {
-                Text("저장하기")
-            }).buttonStyle(SettingButtonStyle())
+//            Button(action: {
+//                if #available(iOS 13.0, *) {
+//                    self.window?.overrideUserInterfaceStyle = .light
+//                }
+//            }, label: {
+//                Text("저장하기")
+//            }).buttonStyle(SettingButtonStyle())
         }
     }
 }
@@ -168,13 +168,13 @@ struct ListHeader: View {
     }
 }
 
-struct SettingButtonStyle: ButtonStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .frame(width: 150, height: 45)
-            .font(.system(size: 14))
-            .foregroundColor(Color.white)
-            .background(Color("LightBlue"))
-            .cornerRadius(6.0)
-    }
-}
+//struct SettingButtonStyle: ButtonStyle {
+//    func makeBody(configuration: Self.Configuration) -> some View {
+//        configuration.label
+//            .frame(width: 150, height: 45)
+//            .font(.system(size: 14))
+//            .foregroundColor(Color.white)
+//            .background(Color("LightBlue"))
+//            .cornerRadius(6.0)
+//    }
+//}

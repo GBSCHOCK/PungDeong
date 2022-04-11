@@ -16,7 +16,7 @@
 		0A6C4CCD27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */; };
 		0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C4CE127FDB0D60097D751 /* LogInView.swift */; };
 		0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FB2827FDB43B00284236 /* AppSymbol.swift */; };
-		E283BDBC27FDDBC300F169F2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283BDBB27FDDBC300F169F2 /* SettingView.swift */; };
+		E2EFCA0F2803F5FD007BEA63 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EFCA0E2803F5FD007BEA63 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		0A6C4CCC27FD9DEA0097D751 /* PungDeongUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PungDeongUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A6C4CE127FDB0D60097D751 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		0AD8FB2827FDB43B00284236 /* AppSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbol.swift; sourceTree = "<group>"; };
-		E283BDBB27FDDBC300F169F2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		E2EFCA0E2803F5FD007BEA63 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 		0A6C4CD927FD9E310097D751 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				E283BDBB27FDDBC300F169F2 /* SettingView.swift */,
+				E2EFCA0E2803F5FD007BEA63 /* ProfileView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -315,9 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6C4CE227FDB0D60097D751 /* LogInView.swift in Sources */,
-				E283BDBC27FDDBC300F169F2 /* SettingView.swift in Sources */,
 				0AD8FB2927FDB43B00284236 /* AppSymbol.swift in Sources */,
 				0A6C4CB227FD9DE90097D751 /* ContentView.swift in Sources */,
+				E2EFCA0F2803F5FD007BEA63 /* ProfileView.swift in Sources */,
 				0A6C4CB027FD9DE90097D751 /* PungDeongApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
