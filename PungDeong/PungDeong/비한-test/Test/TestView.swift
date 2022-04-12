@@ -10,7 +10,6 @@ import SwiftUI
 struct TestView: View {
     var body: some View {
         TestPageView(test: test)
-            
     }
 }
 

@@ -30,18 +30,6 @@ struct TestPageView: View {
     @State private var isLastPageToggle = false
     @State private var isLastPageToggleSave = false
     
-    func makeTestesult() -> [Int] {
-        
-        var testResult: [Int] = [Int](repeating: 0, count: 5)
-        
-        for type in Answer.answeredType {
-            if(type > 0 && type < 6) {
-                testResult[type - 1] += 1
-            }
-        }
-        return testResult
-    }
-    
     func selectingType(index: Int) {
         let selectedType = test.pages[pageIndex].choices[index].type
         
@@ -56,8 +44,6 @@ struct TestPageView: View {
             
         } else {
             // View 전환 메서드 호출
-            var testResult = makeTestesult()
-            print(testResult)
         }
         
     }
@@ -98,21 +84,15 @@ struct TestPageView: View {
                     }
                    
                 }
-                    .padding(.bottom, 6)
+                    .padding(.bottom, 10)
             
                 Text(test.pages[pageIndex].text)
+                    .frame(height: 200)
                     .frame(maxWidth: .infinity)
-                    .font(.body)
-                    .lineSpacing(4.0)
+                    .font(.title3)
                     .background()
-                    .padding(20)
-                    .padding(.vertical, 10)
-                    .background()
-                    .cornerRadius(20).overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.gray.opacity(0.4), lineWidth: 1)
-                    )
-                    
+                    .cornerRadius(20)
+                    .padding(.bottom, 10)
                 
               Spacer()
                 
@@ -146,11 +126,8 @@ struct TestPageView: View {
                 
                 
               
-            }.ignoresSafeArea()
+            }
             .padding(20)
-        }
-        .onDisappear {
-            // 뷰가 사라지기 전에 네트워킹 메서드를 통해 전달
         }
     }
 }
@@ -164,11 +141,11 @@ struct SelectButtonView: View {
     
     var body: some View {
         Text(text)
-            .font(.body)
+            .font(.title3)
             .fontWeight(.semibold)
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
-            .padding()
+            .frame(height: 140)
             .background(Color("TestButton"))
             .cornerRadius(10)
 
@@ -185,12 +162,12 @@ struct NavButtonView: View {
         let inVisible = ((text == "arrow.left") && (pageIndex == 0))||((text == "arrow.right") && (pageIndex == test.pages.count - 1))
         Image(systemName: text)
             .frame(width: 44, height: 44)
-            .font(.subheadline)
+            .font(.body)
             .foregroundColor(Color.black)
             .background(Color.white)
             .cornerRadius(100.0).overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.gray.opacity(0.4), lineWidth: 1)
+                    .stroke(Color.black, lineWidth: 1)
             ).opacity(inVisible ? 0 : 1 )
             .disabled(inVisible)
 
@@ -203,13 +180,13 @@ struct PageIndexButtonView: View {
     var body: some View {
         
         Text(" \(pageIndex+1) / \(test.pages.count) ")
-            .frame(width: 72, height: 44)
-            .font(.footnote)
+            .frame(width: 80, height: 44)
+            .font(.body)
             .foregroundColor(Color.black)
             .background(Color.white)
             .cornerRadius(100.0).overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.gray.opacity(0.4), lineWidth: 1)
+                    .stroke(Color.black, lineWidth: 1)
             )
             .disabled(true)
 
@@ -218,6 +195,9 @@ struct PageIndexButtonView: View {
 
 struct TestPageView_Previews: PreviewProvider {
     static var previews: some View {
-        TestPageView(test: test)
+        NavigationView{
+            TestPageView(test: test)
+        }
+        .previewInterfaceOrientation(.portrait)
     }
 }
